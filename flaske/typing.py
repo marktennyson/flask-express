@@ -5,4 +5,4 @@ if t.TYPE_CHECKING:
     from .response import Response as BaseResponse
 
 Request = t.Type["BaseRequest"]
-Response = t.Type["Response"]
+Response = t.Type["BaseResponse"]

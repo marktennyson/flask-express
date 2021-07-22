@@ -2,7 +2,7 @@
 from flask.wrappers import Request as RequestBase
 from flask.globals import session
 import typing as t
-from munch import munchify
+from .munch import Munch
 
 if t.TYPE_CHECKING:
     from munch import Munch
@@ -15,15 +15,15 @@ class Request(RequestBase):
 
     @property
     def json(self) ->t.Type["Munch"]:
-        return munchify(self.get_json())
+        return Munch(self.get_json())
 
     @property
     def query(self) ->t.Type["Munch"]:
-        return munchify(self.args)
+        return Munch(self.args)
 
     @property
     def body(self) ->t.Type["Munch"]:
-        return munchify(self.form)
+        return Munch(self.form)
 
     @property
     def session():

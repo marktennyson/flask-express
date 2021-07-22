@@ -5,11 +5,16 @@ import typing as t
 from .request import Request
 from .response import Response as Responser
 from ._helper import get_main_ctx_view
+from os import path
 
+
+__version__ = "0.0.1"
+
+__author__ = "Aniket Sarkar"
 
 class Flask(OldFlask):
     request_class = Request
-    response_class = Responser
+    response_class = Response
 
     def __init__(self,
         import_name: str,
@@ -33,6 +38,8 @@ class Flask(OldFlask):
                             root_path=root_path,
                             instance_relative_config=instance_relative_config, 
                             static_host=static_host)
+        self.config['ATTACHMENTS_FOLDER'] = path.join(path.abspath(path.dirname(self.import_name)), "attachments")
+        # print (self.config['ATTACHMENTS_FOLDER'])
 
     @setupmethod
     def add_url_rule(
