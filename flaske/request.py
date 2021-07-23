@@ -14,17 +14,21 @@ class Request(RequestBase):
         super(Request, self).__init__(*wargs, **kwargs)
 
     @property
-    def json(self) ->t.Type["Munch"]:
+    def json(self) -> t.Type["Munch"]:
         return Munch(self.get_json())
 
     @property
-    def query(self) ->t.Type["Munch"]:
+    def query(self) -> t.Type["Munch"]:
         return Munch(self.args)
 
     @property
-    def body(self) ->t.Type["Munch"]:
+    def body(self) -> t.Type["Munch"]:
         return Munch(self.form)
 
     @property
-    def session():
+    def header(self) -> t.Type["Munch"]:
+        return Munch(self.headers)
+
+    @property
+    def session(self):
         return session
