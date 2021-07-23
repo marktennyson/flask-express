@@ -1,7 +1,8 @@
-from flaske import Flask, current_app
+from flaske import Flask, current_app, session
 from flaske.typing import Request, Response
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "this is the secret key."
 
 @app.route("/")
 async def index(req:Request, res:Response):
@@ -25,6 +26,27 @@ def mrp(req:Request, res:Response):
     return res.json(id=1)
     # return res.attachment("golang.png")
 
+@app.route("/check-session")
+def check_session(req:Request, res:Response):
+    ss = dict(session)
+    # print (ss)
+    ss['name1'] = 'aniket'
+    # session['name'] = "aniket"
+    print (ss)
+    return res.send("data")
+
+@app.route("/check-session-2/")
+def check_session_2(req:Request, res:Response):
+    print (req.session)
+    return res.send("data2")
+
+@app.get("/check-query-params/")
+def check_query_params(req:Request, res:Response):
+    res.json(req.query)
+
+@app.get("/check-headers/")
+def check_headers(req:Request, res:Response):
+    return res.send(req.header['Accept-Encoding'])
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+    app.run(debug=True, port=8080)
