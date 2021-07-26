@@ -1,0 +1,767 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>flaske package &mdash; Flaske 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Flaske
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">flaske package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-flaske.munch">flaske.munch module</a></li>
+<li><a class="reference internal" href="#module-flaske.request">flaske.request module</a></li>
+<li><a class="reference internal" href="#module-flaske.response">flaske.response module</a></li>
+<li><a class="reference internal" href="#module-flaske">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Flaske</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>flaske package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/flaske.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="flaske-package">
+<h1>flaske package<a class="headerlink" href="#flaske-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-flaske.munch">
+<span id="flaske-munch-module"></span><h2>flaske.munch module<a class="headerlink" href="#module-flaske.munch" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="flaske.munch.Munch">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">flaske.munch.</span></span><span class="sig-name descname"><span class="pre">Munch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaske.munch.Munch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">munch.Munch</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.munch.Munch.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flaske.munch.Munch.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursively converts a NCObject back into a dictionary.
+&gt;&gt;&gt; b = NCObject(foo=NCObject(lol=True), hello=42, ponies=’are pretty!’)
+&gt;&gt;&gt; sorted(b.to_dict().items())
+[(‘foo’, {‘lol’: True}), (‘hello’, 42), (‘ponies’, ‘are pretty!’)]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.munch.Munch.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flaske.munch.Munch.to_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-flaske.request">
+<span id="flaske-request-module"></span><h2>flaske.request module<a class="headerlink" href="#module-flaske.request" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="flaske.request.Request">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">flaske.request.</span></span><span class="sig-name descname"><span class="pre">Request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">wargs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaske.request.Request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask.wrappers.Request</span></code></p>
+<p>The default response class for the flaske app.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="flaske.request.Request.body">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">body</span></span><em class="property"><span class="pre">:</span> <span class="pre">Type[flaske.munch.Munch]</span></em><a class="headerlink" href="#flaske.request.Request.body" title="Permalink to this definition">¶</a></dt>
+<dd><p>it provides you the form based data.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="flaske.request.Request.header">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="pre">:</span> <span class="pre">Type[flaske.munch.Munch]</span></em><a class="headerlink" href="#flaske.request.Request.header" title="Permalink to this definition">¶</a></dt>
+<dd><p>it provides you the headers based data.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="flaske.request.Request.json">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">json</span></span><em class="property"><span class="pre">:</span> <span class="pre">Type[flaske.munch.Munch]</span></em><a class="headerlink" href="#flaske.request.Request.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>it provides you the json based data.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="flaske.request.Request.query">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">query</span></span><em class="property"><span class="pre">:</span> <span class="pre">Type[flaske.munch.Munch]</span></em><a class="headerlink" href="#flaske.request.Request.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>it provides you the args based data.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="flaske.request.Request.session">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">session</span></span><a class="headerlink" href="#flaske.request.Request.session" title="Permalink to this definition">¶</a></dt>
+<dd><p>it provides you the default session object of flask globals.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-flaske.response">
+<span id="flaske-response-module"></span><h2>flaske.response module<a class="headerlink" href="#module-flaske.response" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="flaske.response.Response">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">flaske.response.</span></span><span class="sig-name descname"><span class="pre">Response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">wargs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaske.response.Response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask.wrappers.Response</span></code></p>
+<p>The default response class for flaske app.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.attachment">
+<span class="sig-name descname"><span class="pre">attachment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaske.response.Response.attachment" title="Permalink to this definition">¶</a></dt>
+<dd><p>send the attachments by using this method.
+The default attachment folder name is <cite>attachments</cite>.
+You can always change it by changing the config parameter.
+the config parameter is <cite>ATTACHMENTS_FOLDER</cite>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_name</strong> – the file you want to server as attachment.</p>
+</dd>
+<dt class="field-even">For example:</dt>
+<dd class="field-even"><p>&#64;app.route(‘/attachments’)
+def attach(req, res):</p>
+<blockquote>
+<div><p>filename = req.query.filename
+return res.attachment(file_name)</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.clearCookie">
+<span class="sig-name descname"><span class="pre">clearCookie</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">wargs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaske.response.Response.clearCookie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear a cookie.  Fails silently if key doesn’t exist.</p>
+<p>It takes the same arguments as clear_cookies.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.clear_cookie">
+<span class="sig-name descname"><span class="pre">clear_cookie</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secure</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">httponly</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samesite</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#flaske.response.Response" title="flaske.response.Response"><span class="pre">flaske.response.Response</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flaske.response.Response.clear_cookie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear a cookie.  Fails silently if key doesn’t exist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – the key (name) of the cookie to be deleted.</p></li>
+<li><p><strong>path</strong> – if the cookie that should be deleted was limited to a
+path, the path has to be defined here.</p></li>
+<li><p><strong>domain</strong> – if the cookie that should be deleted was limited to a
+domain, that domain has to be defined here.</p></li>
+<li><p><strong>secure</strong> – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the cookie will only be available
+via HTTPS.</p></li>
+<li><p><strong>httponly</strong> – Disallow JavaScript access to the cookie.</p></li>
+<li><p><strong>samesite</strong> – Limit the scope of the cookie to only be
+attached to requests that are “same-site”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.end">
+<span class="sig-name descname"><span class="pre">end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaske.response.Response.end" title="Permalink to this definition">¶</a></dt>
+<dd><p>end the current resonse process.
+:param code: provide the web error code, 
+if you want to close this response with a http error.
+for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/end&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">ender</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="c1">#or</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">end</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span> <span class="c1"># to raise a 404 error.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.flash">
+<span class="sig-name descname"><span class="pre">flash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'info'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#flaske.response.Response" title="flaske.response.Response"><span class="pre">flaske.response.Response</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flaske.response.Response.flash" title="Permalink to this definition">¶</a></dt>
+<dd><p>to flash a message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> – the message to flash.</p></li>
+<li><p><strong>category</strong> – the category of flash message. Default is “info”.</p></li>
+</ul>
+</dd>
+</dl>
+<p>for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/flash&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">flasher</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&quot;this is the flash message&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#flaske.response.Response.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the response headers.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> – the key to get the headers from response.</p>
+</dd>
+<dt class="field-even">For example:</dt>
+<dd class="field-even"><p>&#64;app.route(“/get”)
+def getter(req, res):</p>
+<blockquote>
+<div><p>print (res.get(“Content-Type”))
+return res.end()</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.json">
+<span class="sig-name descname"><span class="pre">json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">wargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#flaske.response.Response" title="flaske.response.Response"><span class="pre">flaske.response.Response</span></a></span></span><a class="headerlink" href="#flaske.response.Response.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the json seriliazed data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wargs</strong> – dict or list type value.</p></li>
+<li><p><strong>kwargs</strong> – kwargs type value. it will create</p></li>
+</ul>
+</dd>
+</dl>
+<p>a dictionary with the provided values of kwargs.
+for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/json&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">jsoner</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;aniket sarkar&quot;</span><span class="p">)</span>
+    <span class="c1">#or</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;aniket sarkar&#39;</span><span class="p">})</span>
+    <span class="c1">#or</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.make_response">
+<span class="sig-name descname"><span class="pre">make_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">bytes</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">bytes</span><span class="p"><span class="pre">,</span> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">HTTPStatus</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mimetype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direct_passthrough</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">ResponseBase</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flaske.response.Response.make_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>the base function for this class to create the final response.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.redirect">
+<span class="sig-name descname"><span class="pre">redirect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaske.response.Response.redirect" title="Permalink to this definition">¶</a></dt>
+<dd><p>redirect to specified route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>route</strong> – str based value, the default 
+path where you want to redirect.</p>
+</dd>
+</dl>
+<dl>
+<dt>example::</dt><dd><p>&#64;app.post(“/login”)
+def login(req, res):</p>
+<blockquote>
+<div><p>#if login success
+return res.redirect(“/dashboard”)</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.render">
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_or_raw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">wargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flaske.response.Response.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders a html and sends the rendered HTML string to the client.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>template_or_raw</strong> – provide the template name or the html string to be rendered.</p></li>
+<li><p><strong>wargs</strong> – The dictionary type context for the jinja2 template.</p></li>
+<li><p><strong>context</strong> – the kwargs type context for the jinja2 template.</p></li>
+</ul>
+</dd>
+<dt class="field-even">For example:</dt>
+<dd class="field-even"><p>&#64;app.route(‘/render’)
+def renderer(req, res):</p>
+<blockquote>
+<div><p>context=dict(name=”Aniket Sarkar”, planet=”Pluto”)
+return res.render(“index.html”, context)
+#or
+return res.render(“index.html”, name=”Aniket Sarkar”, planet=”Pluto”)</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flaske.response.Response.response">
+<span class="sig-name descname"><span class="pre">response</span></span><em class="property"><span class="pre">:</span> <span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">bytes</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#flaske.response.Response.response" title="Permalink to this definition">¶</a></dt>
+<dd><p>The response body to send as the WSGI iterable. A list of strings
+or bytes represents a fixed-length response, any other iterable
+is a streaming response. Strings are encoded to bytes as UTF-8.</p>
+<p>Do not set to a plain string or bytes, that will cause sending
+the response to be very inefficient as it will iterate one byte
+at a time.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">dict</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#flaske.response.Response" title="flaske.response.Response"><span class="pre">flaske.response.Response</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flaske.response.Response.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends the HTTP response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>content</strong> – the content to send.</p>
+</dd>
+</dl>
+<p>for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/send&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">sender</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
+    <span class="c1">#or</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;&lt;h1&gt;hello world&lt;/h1&gt;&quot;</span><span class="p">)</span>
+    <span class="c1">#or</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">set_status</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;not found&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.send_file">
+<span class="sig-name descname"><span class="pre">send_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_or_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">PathLike</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">BinaryIO</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mimetype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_attachment</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attachment_filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conditional</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_etags</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_modified</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_age</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_timeout</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#flaske.response.Response" title="flaske.response.Response"><span class="pre">Response</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flaske.response.Response.send_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send the contents of a file to the client.
+Its internally using the send_file method from werkzeug.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path_or_file</strong> – The path to the file to send, relative to the</p>
+</dd>
+</dl>
+<p>current working directory if a relative path is given.
+Alternatively, a file-like object opened in binary mode. Make
+sure the file pointer is seeked to the start of the data.
+:param mimetype: The MIME type to send for the file. If not</p>
+<blockquote>
+<div><p>provided, it will try to detect it from the file name.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>as_attachment</strong> – Indicate to a browser that it should offer to
+save the file instead of displaying it.</p></li>
+<li><p><strong>download_name</strong> – The default name browsers will use when saving
+the file. Defaults to the passed file name.</p></li>
+<li><p><strong>conditional</strong> – Enable conditional and range responses based on
+request headers. Requires passing a file path and <code class="docutils literal notranslate"><span class="pre">environ</span></code>.</p></li>
+<li><p><strong>etag</strong> – Calculate an ETag for the file, which requires passing
+a file path. Can also be a string to use instead.</p></li>
+<li><p><strong>last_modified</strong> – The last modified time to send for the file,
+in seconds. If not provided, it will try to detect it from the
+file path.</p></li>
+<li><p><strong>max_age</strong> – How long the client should cache the file, in
+seconds. If set, <code class="docutils literal notranslate"><span class="pre">Cache-Control</span></code> will be <code class="docutils literal notranslate"><span class="pre">public</span></code>, otherwise
+it will be <code class="docutils literal notranslate"><span class="pre">no-cache</span></code> to prefer conditional caching.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">wargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaske.response.Response.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>set the default header.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>wargs</strong> – dictionary or Headers type data.</p>
+</dd>
+<dt class="field-even">For example:</dt>
+<dd class="field-even"><p>&#64;app.route(“/header-seter”)
+def header_setter(req, res):</p>
+<blockquote>
+<div><p>res.set(‘Content-Type’, ‘application/json’)
+#or
+res.set({‘Content-Type’:’application/json’})
+return res.end()</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.setCookie">
+<span class="sig-name descname"><span class="pre">setCookie</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">wargs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaske.response.Response.setCookie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a cookie.
+This is the same function as set_cookie.</p>
+<p>All the parameters are same as for set_cookie.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.set_cookie">
+<span class="sig-name descname"><span class="pre">set_cookie</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_age</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">timedelta</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expires</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secure</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">httponly</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samesite</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#flaske.response.Response" title="flaske.response.Response"><span class="pre">Response</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flaske.response.Response.set_cookie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a cookie.</p>
+<p>A warning is raised if the size of the cookie header exceeds
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">max_cookie_size</span></code>, but the header will still be set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – the key (name) of the cookie to be set.</p></li>
+<li><p><strong>value</strong> – the value of the cookie.</p></li>
+<li><p><strong>max_age</strong> – should be a number of seconds, or <cite>None</cite> (default) if
+the cookie should last only as long as the client’s
+browser session.</p></li>
+<li><p><strong>expires</strong> – should be a <cite>datetime</cite> object or UNIX timestamp.</p></li>
+<li><p><strong>path</strong> – limits the cookie to a given path, per default it will
+span the whole domain.</p></li>
+<li><p><strong>domain</strong> – if you want to set a cross-domain cookie.  For example,
+<code class="docutils literal notranslate"><span class="pre">domain=&quot;.example.com&quot;</span></code> will set a cookie that is
+readable by the domain <code class="docutils literal notranslate"><span class="pre">www.example.com</span></code>,
+<code class="docutils literal notranslate"><span class="pre">foo.example.com</span></code> etc.  Otherwise, a cookie will only
+be readable by the domain that set it.</p></li>
+<li><p><strong>secure</strong> – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the cookie will only be available
+via HTTPS.</p></li>
+<li><p><strong>httponly</strong> – Disallow JavaScript access to the cookie.</p></li>
+<li><p><strong>samesite</strong> – Limit the scope of the cookie to only be
+attached to requests that are “same-site”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.set_status">
+<span class="sig-name descname"><span class="pre">set_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#flaske.response.Response" title="flaske.response.Response"><span class="pre">flaske.response.Response</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flaske.response.Response.set_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>set the web response status code.
+:param code:</p>
+<blockquote>
+<div><p>The web response status.</p>
+</div></blockquote>
+<dl class="field-list">
+<dt class="field-odd">For example:</dt>
+<dd class="field-odd"><p>&#64;app.route(“/set-status”)
+def set_statuser(req, res):</p>
+<blockquote>
+<div><p>return res.set_status(404).send(“your requested page is not found.”)</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flaske.response.Response.status_code">
+<span class="sig-name descname"><span class="pre">status_code</span></span><em class="property"> <span class="pre">=</span> <span class="pre">200</span></em><a class="headerlink" href="#flaske.response.Response.status_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.response.Response.type">
+<span class="sig-name descname"><span class="pre">type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaske.response.Response.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the Content-Type HTTP header to the 
+MIME type as determined by the specified type.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>type</strong> – The desired mine type to set.</p>
+</dd>
+<dt class="field-even">For example:</dt>
+<dd class="field-even"><p>&#64;app.route(“/set-mime”)
+def mimer(req, res):</p>
+<blockquote>
+<div><p>res.type(‘application/json’)
+#or
+res.type(“.html”)
+#or
+res.type(“json”)</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-flaske">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-flaske" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="flaske.Flask">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">flaske.</span></span><span class="sig-name descname"><span class="pre">Flask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">import_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">static_url_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">static_folder</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'static'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">static_host</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host_matching</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subdomain_matching</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_folder</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'templates'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance_relative_config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flaske.Flask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask.app.Flask</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.Flask.add_url_rule">
+<span class="sig-name descname"><span class="pre">add_url_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view_func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">provide_automatic_options</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#flaske.Flask.add_url_rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a rule for routing incoming requests and building
+URLs. The <code class="xref py py-meth docutils literal notranslate"><span class="pre">route()</span></code> decorator is a shortcut to call this
+with the <code class="docutils literal notranslate"><span class="pre">view_func</span></code> argument. These are equivalent:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="o">...</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">view_func</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See <span class="xref std std-ref">url-route-registrations</span>.</p>
+<p>The endpoint name for the route defaults to the name of the view
+function if the <code class="docutils literal notranslate"><span class="pre">endpoint</span></code> parameter isn’t passed. An error
+will be raised if a function has already been registered for the
+endpoint.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">methods</span></code> parameter defaults to <code class="docutils literal notranslate"><span class="pre">[&quot;GET&quot;]</span></code>. <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> is
+always added automatically, and <code class="docutils literal notranslate"><span class="pre">OPTIONS</span></code> is added
+automatically by default.</p>
+<p><code class="docutils literal notranslate"><span class="pre">view_func</span></code> does not necessarily need to be passed, but if the
+rule should participate in routing an endpoint name must be
+associated with a view function at some point with the
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">endpoint()</span></code> decorator.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">endpoint</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">view_func</span></code> has a <code class="docutils literal notranslate"><span class="pre">required_methods</span></code> attribute, those
+methods are added to the passed and automatic methods. If it
+has a <code class="docutils literal notranslate"><span class="pre">provide_automatic_methods</span></code> attribute, it is used as the
+default if the parameter is not passed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rule</strong> – The URL rule string.</p></li>
+<li><p><strong>endpoint</strong> – The endpoint name to associate with the rule
+and view function. Used when routing and building URLs.
+Defaults to <code class="docutils literal notranslate"><span class="pre">view_func.__name__</span></code>.</p></li>
+<li><p><strong>view_func</strong> – The view function to associate with the
+endpoint name.</p></li>
+<li><p><strong>provide_automatic_options</strong> – Add the <code class="docutils literal notranslate"><span class="pre">OPTIONS</span></code> method and
+respond to <code class="docutils literal notranslate"><span class="pre">OPTIONS</span></code> requests automatically.</p></li>
+<li><p><strong>options</strong> – Extra options passed to the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Rule</span></code> object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flaske.Flask.listen">
+<span class="sig-name descname"><span class="pre">listen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_dotenv</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#flaske.Flask.listen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Binds and listens for connections on the specified host and port
+It’s very similar to <code class="xref py py-func docutils literal notranslate"><span class="pre">flask.Flask.run()</span></code></p>
+<div class="admonition-keep-in-mind admonition">
+<p class="admonition-title">Keep in Mind</p>
+<p>Flaske will suppress any server error with a generic error page
+unless it is in debug mode.  As such to enable just the
+interactive debugger without the code reloading, you have to
+invoke <a class="reference internal" href="#flaske.Flask.listen" title="flaske.Flask.listen"><code class="xref py py-meth docutils literal notranslate"><span class="pre">listen()</span></code></a> with <code class="docutils literal notranslate"><span class="pre">debug=True</span></code> and <code class="docutils literal notranslate"><span class="pre">use_reloader=False</span></code>.
+Setting <code class="docutils literal notranslate"><span class="pre">use_debugger</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code> without being in debug mode
+won’t catch any exceptions because there won’t be any to
+catch.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> – the hostname to listen on. Set this to <code class="docutils literal notranslate"><span class="pre">'0.0.0.0'</span></code> to
+have the server available externally as well. Defaults to
+<code class="docutils literal notranslate"><span class="pre">'127.0.0.1'</span></code> or the host in the <code class="docutils literal notranslate"><span class="pre">SERVER_NAME</span></code> config variable
+if present.</p></li>
+<li><p><strong>port</strong> – the port of the webserver. Defaults to <code class="docutils literal notranslate"><span class="pre">5000</span></code> or the
+port defined in the <code class="docutils literal notranslate"><span class="pre">SERVER_NAME</span></code> config variable if present.</p></li>
+<li><p><strong>debug</strong> – if given, enable or disable debug mode. See
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">debug</span></code>.</p></li>
+<li><p><strong>load_dotenv</strong> – Load the nearest <code class="file docutils literal notranslate"><span class="pre">.env</span></code> and <code class="file docutils literal notranslate"><span class="pre">.flaskenv</span></code>
+files to set environment variables. Will also change the working
+directory to the directory containing the first file found.</p></li>
+<li><p><strong>options</strong> – the options to be forwarded to the underlying Werkzeug
+server. See <code class="xref py py-func docutils literal notranslate"><span class="pre">werkzeug.serving.run_simple()</span></code> for more
+information.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flaske.Flask.request_class">
+<span class="sig-name descname"><span class="pre">request_class</span></span><a class="headerlink" href="#flaske.Flask.request_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#flaske.request.Request" title="flaske.request.Request"><code class="xref py py-class docutils literal notranslate"><span class="pre">flaske.request.Request</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flaske.Flask.response_class">
+<span class="sig-name descname"><span class="pre">response_class</span></span><a class="headerlink" href="#flaske.Flask.response_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">flask.wrappers.Response</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Aniket Sarkar.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
