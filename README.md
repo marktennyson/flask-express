@@ -116,8 +116,8 @@ For example:
 ```python
 @app.get("/get-form-data")
 def get_form_data(req, res):
-    name=req.form.name
-    email = req.form.email
+    name=req.body.name
+    email = req.body.email
     return res.send(dict(name=name, email=email))
 ```
 
