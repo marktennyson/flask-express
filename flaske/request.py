@@ -4,9 +4,9 @@ from flask.globals import session
 import typing as t
 from .munch import Munch
 
+
 if t.TYPE_CHECKING:
     from munch import Munch
-
 
 class Request(RequestBase):
 
