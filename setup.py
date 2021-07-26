@@ -23,9 +23,17 @@ setup(
     include_package_data=True,
     zip_safe=False,
     platforms="any",
-    # install_requires=[ 
-        
-    # ],
+    install_requires=[ 
+        "asgiref==3.4.1",
+        "click==8.0.1",
+        "Flask==2.0.1",
+        "itsdangerous==2.0.1",
+        "Jinja2==3.0.1",
+        "MarkupSafe==2.0.1",
+        "munch==2.5.0",
+        "six==1.16.0",
+        "Werkzeug==2.0.1"
+    ],
     extras_require={},
     python_requires=">=3.6,<4",
 

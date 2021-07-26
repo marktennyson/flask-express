@@ -5,9 +5,15 @@
 [![Downloads](https://pepy.tech/badge/flaske)](https://pepy.tech/project/flaske) [![Downloads](https://pepy.tech/badge/flaske/month)](https://pepy.tech/project/flaske/month) [![Downloads](https://pepy.tech/badge/flaske/week)](https://pepy.tech/project/flaske/week)
 <br>
 
-#### contributor wanted : feel free to contact me at aniketsarkar@yahoo.com
+#### contributor wanted : feel free to contact me at aniketsarkar@yahoo.com    
 
 provide the interactive service like expressJs for the flask app.
+
+
+#### Important Links
+[PYPI link](https://pypi.org/project/flaske)    
+[Github link](https://github.com/marktennyson/flaske)    
+[Documentation link](https://flaske.vercel.app) 
 
 ### Basic installation
 Use the package manager [pip](https://pypi.org/project/flaske/) to install flaske.

@@ -1,1 +1,3 @@
 recursive-exclude flaske/examples *
+
+recursive-exclude docs/*
