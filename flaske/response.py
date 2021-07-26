@@ -229,7 +229,7 @@ class Response(ResponseBase):
             path where you want to redirect.
 
         example::
-
+            @app.post("/login")
             def login(req, res):
                 #if login success
                 return res.redirect("/dashboard")
@@ -296,7 +296,7 @@ class Response(ResponseBase):
 
         :for example::
 
-            @app.route(/set-mime)
+            @app.route("/set-mime")
             def mimer(req, res):
                 res.type('application/json')
                 #or
@@ -353,7 +353,7 @@ class Response(ResponseBase):
             ) -> t.Type["Response"]:
         """
         Send the contents of a file to the client.
-        Its internammy using the send_file method from werkzeug.
+        Its internally using the send_file method from werkzeug.
 
         :param path_or_file: The path to the file to send, relative to the
         current working directory if a relative path is given.

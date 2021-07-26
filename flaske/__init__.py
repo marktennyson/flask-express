@@ -1,6 +1,8 @@
 from flask import Flask as OldFlask
 from flask import *
-from flask.scaffold import setupmethod, _endpoint_from_view_func
+from flask.scaffold import (setupmethod, 
+                _endpoint_from_view_func
+                )
 import typing as t
 from .request import Request
 from .response import Response as Responser
@@ -100,3 +102,41 @@ class Flask(OldFlask):
                 )
             view_func = get_main_ctx_view(view_func)
             self.view_functions[endpoint] = view_func
+
+    def listen(self, 
+        port: t.Optional[int] = None,
+        host: t.Optional[str] = None,
+        debug: t.Optional[bool] = None,
+        load_dotenv: bool = True,
+        **options: t.Any
+        ) -> None:
+        """
+        Binds and listens for connections on the specified host and port
+        It's very similar to :func:`flask.Flask.run`
+
+        .. admonition:: Keep in Mind
+
+           Flask will suppress any server error with a generic error page
+           unless it is in debug mode.  As such to enable just the
+           interactive debugger without the code reloading, you have to
+           invoke :meth:`listen` with ``debug=True`` and ``use_reloader=False``.
+           Setting ``use_debugger`` to ``True`` without being in debug mode
+           won't catch any exceptions because there won't be any to
+           catch.
+
+        :param host: the hostname to listen on. Set this to ``'0.0.0.0'`` to
+            have the server available externally as well. Defaults to
+            ``'127.0.0.1'`` or the host in the ``SERVER_NAME`` config variable
+            if present.
+        :param port: the port of the webserver. Defaults to ``5000`` or the
+            port defined in the ``SERVER_NAME`` config variable if present.
+        :param debug: if given, enable or disable debug mode. See
+            :attr:`debug`.
+        :param load_dotenv: Load the nearest :file:`.env` and :file:`.flaskenv`
+            files to set environment variables. Will also change the working
+            directory to the directory containing the first file found.
+        :param options: the options to be forwarded to the underlying Werkzeug
+            server. See :func:`werkzeug.serving.run_simple` for more
+            information.
+        """
+        return self.run(host, port, debug, load_dotenv, **options)
