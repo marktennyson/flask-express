@@ -1,6 +1,5 @@
 # flaske
 <img src="https://raw.githubusercontent.com/marktennyson/flaske/main/logos/flaske-logo.png">
-<br>
 
 # Downloads
 [![Downloads](https://pepy.tech/badge/flaske)](https://pepy.tech/project/flaske) [![Downloads](https://pepy.tech/badge/flaske/month)](https://pepy.tech/project/flaske/month) [![Downloads](https://pepy.tech/badge/flaske/week)](https://pepy.tech/project/flaske/week)
@@ -73,7 +72,7 @@ def index(req:Request, res:Response):
 
 ### Basic Documentation
 
-The officiaal and full documentation for this project is available at: https://flaske.vercel.app.
+The official and full documentation for this project is available at: https://flaske.vercel.app.
 Here I have tried to provide some of the basic features of this project.
 
 #### Request class:
