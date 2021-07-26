@@ -4,13 +4,14 @@ from inspect import (signature,
 from functools import wraps
 from .response import Response
 from flask.globals import request
+import typing as t
 
 from asgiref.sync import async_to_sync as asgiref_async_to_sync
 
 def async_to_sync(func):
     return asgiref_async_to_sync(func)
 
-def get_main_ctx_view(func):
+def get_main_ctx_view(func:t.Callable):
     """
     adding the default request, response object with view function
     """

@@ -1,8 +1,8 @@
-from flaske import __version__ as version
-from flaske import __author__ as author
-
 from setuptools import setup,find_packages
 
+
+VERSION = "0.0.1"
+AUTHOR = "Aniket Sarkar"
 
 with open("README.md", "r") as f:
     long_description = f.read()
@@ -10,10 +10,10 @@ with open("README.md", "r") as f:
 
 setup(
     name="Flaske",
-    version=version,
+    version=VERSION,
     url="https://github.com/marktennyson/flaske",
     license="GNU General Public License v3 or later (GPLv3+)",
-    author=author,
+    author=AUTHOR,
     author_email="aniketsarkar@yahoo.com",
     description="interactive app like expressJs for flask.",
     long_description=long_description,

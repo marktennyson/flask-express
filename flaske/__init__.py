@@ -10,10 +10,6 @@ from ._helper import get_main_ctx_view
 from os import path
 
 
-__version__ = "0.0.1"
-
-__author__ = "Aniket Sarkar"
-
 class Flask(OldFlask):
     request_class = Request
     response_class = Response
