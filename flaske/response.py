@@ -1,5 +1,5 @@
 from flask import (json, 
-            redirect, 
+            redirect as redirector, 
             flash, 
             send_file as file_sender, 
             request,
@@ -234,7 +234,7 @@ class Response(ResponseBase):
                 #if login success
                 return res.redirect("/dashboard")
         """
-        return self.make_response(redirect(route))
+        return redirector(route)
 
 
     def get(self,key:str) -> str:

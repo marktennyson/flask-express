@@ -63,7 +63,7 @@ async def index(req, res):
     return res.json(req.header)
 ```
 
-##### You can use the python typing for a better view of the codes and auto complition.
+##### You can use the python typing for a better view of the codes and auto completion.
 
 ```python
 from flaske import Flask
