@@ -48,5 +48,9 @@ def check_query_params(req:Request, res:Response):
 def check_headers(req:Request, res:Response):
     return res.send(req.header['Accept-Encoding'])
 
+@app.get("/redirect")
+def redirector(req:Request, res:Response):
+    return res.redirect("https://www.google.com")
+
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
