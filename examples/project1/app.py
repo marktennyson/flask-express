@@ -50,7 +50,17 @@ def check_headers(req:Request, res:Response):
 
 @app.get("/redirect")
 def redirector(req:Request, res:Response):
-    return res.redirect("https://www.google.com")
+    return res.set_status(308).redirect("https://www.google.com")
+
+@app.get("/set-session")
+def set_session(req:Request, res:Response):
+    req.session['username'] = 'aniketsarkar'
+    return res.send('OK')
+
+@app.get("/get-session")
+def get_session(req:Request, res:Response):
+    username = req.session.get('username')
+    return res.send(dict(username=username))
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8080)
+    app.listen(debug=True, port=8080)
