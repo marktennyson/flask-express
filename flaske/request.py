@@ -1,4 +1,3 @@
-# from flask.ctx import has_request_context
 from flask.wrappers import Request as RequestBase
 from flask.globals import session
 import typing as t
