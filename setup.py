@@ -1,7 +1,7 @@
 from setuptools import setup,find_packages
 
 
-VERSION = "0.0.3"
+VERSION_INFO = (0, 0, 4)
 AUTHOR = "Aniket Sarkar"
 
 with open("README.md", "r") as f:
@@ -10,7 +10,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="Flaske",
-    version=VERSION,
+    version=".".join([str(v) for v in list(VERSION_INFO)]),
     url="https://github.com/marktennyson/flaske",
     license="GNU General Public License v3 or later (GPLv3+)",
     author=AUTHOR,
@@ -24,15 +24,9 @@ setup(
     zip_safe=False,
     platforms="any",
     install_requires=[ 
-        "asgiref==3.4.1",
-        "click==8.0.1",
-        "Flask==2.0.1",
-        "itsdangerous==2.0.1",
-        "Jinja2==3.0.1",
-        "MarkupSafe==2.0.1",
-        "munch==2.5.0",
-        "six==1.16.0",
-        "Werkzeug==2.0.1"
+        "asgiref >= 3.4.1",
+        "Flask >= 2.0.0",
+        "munch >= 2.5.0",
     ],
     extras_require={},
     python_requires=">=3.6,<4",

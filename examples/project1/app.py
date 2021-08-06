@@ -1,7 +1,11 @@
-from flaske import Flask, current_app, session
+from flaske import Flaske, current_app, session
+from flask import Flask
 from flaske.typing import Request, Response
 
 app = Flask(__name__)
+
+app = Flaske(app)
+# app = flaske.init_app(app)
 app.config['SECRET_KEY'] = "this is the secret key."
 
 @app.route("/")
@@ -19,12 +23,13 @@ def mrp(req:Request, res:Response):
     # resp = make_response("file resp")
     # print (res.headers)
     # print (current_app.config.get("ATTACHMENTS_FOLDER"))
-    res.type("application/json")
-    print (res.get("Content-Type"))
-    res.set_cookie("cookie_key", 'aniketsarkar')
-    print (res.headers)
-    return res.json(id=1)
-    # return res.attachment("golang.png")
+    # res.type("application/json")
+    # print (res.get("Content-Type"))
+    # res.set_cookie("cookie_key", 'aniketsarkar')
+    # print (res.headers)
+    # return res.json(id=1)
+    # print (app.config)
+    return res.attachment("golang.png")
 
 @app.route("/check-session")
 def check_session(req:Request, res:Response):
@@ -50,7 +55,17 @@ def check_headers(req:Request, res:Response):
 
 @app.get("/redirect")
 def redirector(req:Request, res:Response):
-    return res.redirect("https://www.google.com")
+    return res.set_status(308).redirect("https://www.google.com")
+
+@app.get("/set-session")
+def set_session(req:Request, res:Response):
+    req.session['username'] = 'aniketsarkar'
+    return res.send('OK')
+
+@app.get("/get-session")
+def get_session(req:Request, res:Response):
+    username = req.session.get('username')
+    return res.send(dict(username=username))
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)

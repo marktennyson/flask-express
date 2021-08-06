@@ -41,10 +41,27 @@ I think this is enough for the introdunction, let's play with the examples menti
 
 ##### Basic example: 
 
+inbuilt flaske.Flask class
 ```python
 from flaske import Flask
 
 app = Flask(__name__)
+
+@app.get("/")
+def index(req, res):
+    return res.json(req.header)
+```
+
+inbuilt flaske.Flaske class
+```python
+from flaske import Flaske
+from flask import Flask
+
+app = Flask(__name__)
+app = Flaske(app)
+#or
+flaske = Flaske()
+app = flaske.init_app(app)
 
 @app.get("/")
 def index(req, res):

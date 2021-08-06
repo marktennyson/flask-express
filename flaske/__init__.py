@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-from flask import Flask as OldFlask
-from flask import *
-from flask.scaffold import (setupmethod, 
-                _endpoint_from_view_func
-                )
-=======
 """
 created by: Aniket Sarkar(https://github.com/marktennyson)
 """
@@ -57,12 +50,58 @@ from flask.templating import render_template_string as render_template_string
 from flask.scaffold import setupmethod
 from flask.scaffold import _endpoint_from_view_func                                
 from flask.app import Flask as OldFlask
->>>>>>> c3fa73facfe6ddfa1a16f2dca076de4183897baa
 import typing as t
 from .request import Request
 from .response import Response as Responser
 from ._helper import get_main_ctx_view
 from os import path
+
+
+__all__ = (
+    "Flask",
+    "Flaske",
+    "escape",
+    "Markup",
+    "abort",
+    "redirect",
+    "json",
+    "Response",
+    "Blueprint",
+    "Config",
+    "after_this_request",
+    "copy_current_request_context",
+    "has_app_context",
+    "has_request_context",
+    "_app_ctx_stack",
+    "_request_ctx_stack",
+    "current_app",
+    "g",
+    "request",
+    "session",
+    "flash",
+    "get_flashed_messages",
+    "get_template_attribute",
+    "make_response",
+    "safe_join",
+    "send_file",
+    "send_from_directory",
+    "stream_with_context",
+    "url_for",
+    "jsonify",
+    "appcontext_pushed",
+    "appcontext_popped",
+    "appcontext_tearing_down",
+    "before_render_template",
+    "got_request_exception",
+    "message_flashed",
+    "request_finished",
+    "request_tearing_down",
+    "signals_available",
+    "template_rendered",
+    "render_template",
+    "render_template_string",
+    "Responser",
+)
 
 
 class Flask(OldFlask):
@@ -92,7 +131,6 @@ class Flask(OldFlask):
                             instance_relative_config=instance_relative_config, 
                             static_host=static_host)
         self.config['ATTACHMENTS_FOLDER'] = path.join(path.abspath(path.dirname(self.import_name)), "attachments")
-        # print (self.config['ATTACHMENTS_FOLDER'])
 
     @setupmethod
     def add_url_rule(
@@ -191,3 +229,32 @@ class Flask(OldFlask):
             information.
         """
         return self.run(host, port, debug, load_dotenv, **options)
+
+
+class Flaske(Flask):
+    """
+    This is the helper class for Flask based app.
+    If you don't want to use the flaske.Flask class and
+    you want to use the default flask.Flask class then
+    flaske.Flaske will be helpful for you.
+
+    If you want to use FlaskAPI type module with flaske,
+    then you should use flaske.Flaske instead of flaske.Flask.
+
+    :param app:
+        a instance of flask.Flask
+    """
+    def __init__(self, app:t.Optional["OldFlask"]=None):
+        if app is not None:
+            self.init_app(app)
+
+    def init_app(self, app:"OldFlask"):
+        """
+        this is the main method to initialize the flask app with flaske.
+
+        :param app:
+            a instance of flask.Flask
+        """
+        self.__dict__.update(app.__dict__.copy())
+        self.config['ATTACHMENTS_FOLDER'] = path.join(path.abspath(path.dirname(self.import_name)), "attachments")
+        return self
