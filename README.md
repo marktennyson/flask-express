@@ -1,8 +1,8 @@
-# flaske
-<img src="https://raw.githubusercontent.com/marktennyson/flaske/main/logos/flaske-logo.png">
+# flask-express
+<img src="https://raw.githubusercontent.com/marktennyson/flask-express/main/logos/flask-express-logo.png">
 
 # Downloads
-[![Downloads](https://pepy.tech/badge/flaske)](https://pepy.tech/project/flaske) [![Downloads](https://pepy.tech/badge/flaske/month)](https://pepy.tech/project/flaske/month) [![Downloads](https://pepy.tech/badge/flaske/week)](https://pepy.tech/project/flaske/week)
+[![Downloads](https://pepy.tech/badge/flask-express)](https://pepy.tech/project/flask-express) [![Downloads](https://pepy.tech/badge/flask-express/month)](https://pepy.tech/project/flask-express/month) [![Downloads](https://pepy.tech/badge/flask-express/week)](https://pepy.tech/project/flask-express/week)
 <br>
 
 #### contributor wanted : feel free to contact me at aniketsarkar@yahoo.com    
@@ -11,28 +11,28 @@ provide the interactive service like expressJs for the flask app.
 
 
 #### Important Links
-[PYPI link](https://pypi.org/project/flaske)    
-[Github link](https://github.com/marktennyson/flaske)    
-[Documentation link](https://flaske.vercel.app) 
+[PYPI link](https://pypi.org/project/flask-express)    
+[Github link](https://github.com/marktennyson/flask-express)    
+[Documentation link](https://marktennyson.github.io/flask-express) 
 
 ### Basic installation
-Use the package manager [pip](https://pypi.org/project/flaske/) to install flaske.
+Use the package manager [pip](https://pypi.org/project/flask-express/) to install flask-express.
 
 ```bash
-python3 -m pip install flaske
+python3 -m pip install flask-express
 ```
 Install from source code
 
 ```bash
-git clone https://github.com/marktennyson/flaske.git && cd flaske/
+git clone https://github.com/marktennyson/flask-express.git && cd flask-express/
 python3 setup.py install
 ```
 
-### Introduction to Flaske
-Flaske is here to give you people the feel like ExpressJs while using the Flask app.
+### Introduction to Flask-Express
+Flask-Express is here to give you people the feel like ExpressJs while using the Flask app.
 Basically you can use the default Request and Response as two parameters of the view functions.
 
-Flaske comes with all the features of Flask with some extra features.
+Flask-Express comes with all the features of Flask with some extra features.
 
 We are using the `munch` module to provide the attribute-style access very similar to the Javascript.
 I think this is enough for the introdunction, let's play with the examples mentioned below.
@@ -41,39 +41,23 @@ I think this is enough for the introdunction, let's play with the examples menti
 
 ##### Basic example: 
 
-inbuilt flaske.Flask class
+inbuilt flask_express.FlaskExpress class
 ```python
-from flaske import Flask
+from flask_express import FlaskExpress
 
-app = Flask(__name__)
+app = FlaskExpress(__name__)
 
 @app.get("/")
 def index(req, res):
     return res.json(req.header)
 ```
 
-inbuilt flaske.Flaske class
-```python
-from flaske import Flaske
-from flask import Flask
-
-app = Flask(__name__)
-app = Flaske(app)
-#or
-flaske = Flaske()
-app = flaske.init_app(app)
-
-@app.get("/")
-def index(req, res):
-    return res.json(req.header)
-```
-
-##### Now the flask 2.0 support the asynchronus view function. You can implement this with flaske too.
+##### Now the flask 2.0 support the asynchronus view function. You can implement this with flask-express too.
 
 ```python
-from flaske import Flask
+from flask_express import FlaskExpress
 
-app = Flask(__name__)
+app = FlaskExpress(__name__)
 
 @app.get("/")
 async def index(req, res):
@@ -83,10 +67,10 @@ async def index(req, res):
 ##### You can use the python typing for a better view of the codes and auto completion.
 
 ```python
-from flaske import Flask
-from flaske.typing import Request, Response
+from flask_express import FlaskExpress
+from flask_express.typing import Request, Response
 
-app = Flask(__name__)
+app = FlaskExpress(__name__)
 
 @app.get("/")
 def index(req:Request, res:Response):
@@ -95,8 +79,8 @@ def index(req:Request, res:Response):
 
 ### Basic Documentation
 
-The official and full documentation for this project is available at: https://flaske.vercel.app.
-Here I have tried to provide some of the basic features of this project.
+The official and full documentation for this project is available at: https://marktennyson.github.io/flask-express.
+Here I have tried to provide some of the basic features of this project here.
 
 #### Request class:
 N.B: all of the properties of the Request class will return an instance of Munch.
@@ -319,6 +303,6 @@ make a http response. It's same as `Flask.wrappers.Request`
 2. install all the required dependencies from requirements.txt file.
 3. make any changes on you local code.
 4. then install the module on your virtual environment using `python setup.py install` command.
-5. The above command will install the `flaske` module on your virtual environment.
+5. The above command will install the `flask-express` module on your virtual environment.
 6. Now create a separate project inside the example folder and start testing for your code changes.
 7. If you face any difficulties to perform the above steps, then plese contact me at: `aniketsarkar@yahoo.com`.

@@ -1,11 +1,10 @@
-from flaske import Flaske, current_app, session
-from flask import Flask
-from flaske.typing import Request, Response
+from flask_express import FlaskExpress
+from flask import session
+from flask_express.typing import Request, Response
 
-app = Flask(__name__)
+app = FlaskExpress(__name__)
 
-app = Flaske(app)
-# app = flaske.init_app(app)
+
 app.config['SECRET_KEY'] = "this is the secret key."
 
 @app.route("/")

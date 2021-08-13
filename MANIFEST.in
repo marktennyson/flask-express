@@ -1,3 +1,3 @@
-recursive-exclude flaske/examples *
+recursive-exclude flask-express/examples *
 
 recursive-exclude docs/*

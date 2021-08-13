@@ -59,7 +59,7 @@ ERROR_DICT:dict = {
 
 class Response(ResponseBase):
     """
-    The default response class for flaske app.
+    The default response class for flask-express app.
     """
     status_code = 200
 

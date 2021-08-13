@@ -2,8 +2,6 @@
 created by: Aniket Sarkar(https://github.com/marktennyson)
 Please contribute in this project.
 """
-
-
 from markupsafe import escape
 from markupsafe import Markup
 from werkzeug.exceptions import abort as abort
@@ -50,7 +48,7 @@ from flask.templating import render_template_string as render_template_string
 
 from flask.scaffold import setupmethod
 from flask.scaffold import _endpoint_from_view_func                                
-from flask.app import Flask as OldFlask
+from flask.app import Flask
 import typing as t
 from .request import Request
 from .response import Response as Responser
@@ -59,8 +57,7 @@ from os import path
 
 
 __all__ = (
-    "Flask",
-    "Flaske",
+    "FlaskExpress",
     "escape",
     "Markup",
     "abort",
@@ -105,7 +102,7 @@ __all__ = (
 )
 
 
-class Flask(OldFlask):
+class FlaskExpress(Flask):
     request_class = Request
     response_class = Response
 
@@ -121,7 +118,7 @@ class Flask(OldFlask):
         instance_relative_config: bool = False,
         root_path: t.Optional[str] = None,
     ) -> None:
-        super(Flask, self).__init__(import_name=import_name, 
+        super().__init__(import_name=import_name, 
                             static_url_path=static_url_path, 
                             static_folder=static_folder, 
                             host_matching=host_matching, 
@@ -206,7 +203,7 @@ class Flask(OldFlask):
 
         .. admonition:: Keep in Mind
 
-           Flaske will suppress any server error with a generic error page
+           Flask-Express will suppress any server error with a generic error page
            unless it is in debug mode.  As such to enable just the
            interactive debugger without the code reloading, you have to
            invoke :meth:`listen` with ``debug=True`` and ``use_reloader=False``.
@@ -230,32 +227,3 @@ class Flask(OldFlask):
             information.
         """
         return self.run(host, port, debug, load_dotenv, **options)
-
-
-class Flaske(Flask):
-    """
-    This is the helper class for Flask based app.
-    If you don't want to use the flaske.Flask class and
-    you want to use the default flask.Flask class then
-    flaske.Flaske will be helpful for you.
-
-    If you want to use FlaskAPI type module with flaske,
-    then you should use flaske.Flaske instead of flaske.Flask.
-
-    :param app:
-        a instance of flask.Flask
-    """
-    def __init__(self, app:t.Optional["OldFlask"]=None):
-        if app is not None:
-            self.init_app(app)
-
-    def init_app(self, app:"OldFlask"):
-        """
-        this is the main method to initialize the flask app with flaske.
-
-        :param app:
-            a instance of flask.Flask
-        """
-        self.__dict__.update(app.__dict__.copy())
-        self.config['ATTACHMENTS_FOLDER'] = path.join(path.abspath(path.dirname(self.import_name)), "attachments")
-        return self
