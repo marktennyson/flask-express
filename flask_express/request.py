@@ -9,7 +9,7 @@ if t.TYPE_CHECKING:
 
 class Request(RequestBase):
     """
-    The default response class for the flaske app.
+    The default response class for the flask-express app.
     """
     def __init__(self, *wargs, **kwargs) -> None:
         super(Request, self).__init__(*wargs, **kwargs)

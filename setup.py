@@ -1,7 +1,7 @@
 from setuptools import setup,find_packages
 
 
-VERSION_INFO = (0, 0, 4)
+VERSION_INFO = (0, 1, 0)
 AUTHOR = "Aniket Sarkar"
 
 with open("README.md", "r") as f:
@@ -9,16 +9,16 @@ with open("README.md", "r") as f:
 
 
 setup(
-    name="Flaske",
+    name="Flask-Express",
     version=".".join([str(v) for v in list(VERSION_INFO)]),
-    url="https://github.com/marktennyson/flaske",
+    url="https://github.com/marktennyson/flask-express",
     license="GNU General Public License v3 or later (GPLv3+)",
     author=AUTHOR,
     author_email="aniketsarkar@yahoo.com",
     description="interactive app like expressJs for flask.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    keywords=["flask", "flaske", "Navycut"],
+    keywords=["flask", "flask-express", "Navycut"],
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
