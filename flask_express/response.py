@@ -234,10 +234,7 @@ class Response(ResponseBase):
                 #if login success
                 return res.redirect("/dashboard")
         """
-        if self.status_code == 200:
-            self.status_code = 302
-            
-        return redirector(route), self.status_code
+        return redirector(route)
 
 
     def get(self,key:str) -> str:
