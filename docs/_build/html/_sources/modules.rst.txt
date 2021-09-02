@@ -4,6 +4,6 @@ flaske
 .. toctree::
    :maxdepth: 4
 
-   flaske
+   flask_express
    setup
    test

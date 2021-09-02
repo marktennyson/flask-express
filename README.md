@@ -293,10 +293,11 @@ make a http response. It's same as `Flask.wrappers.Request`
 ### Development
 
 #### Contribution procedure.
-1. Form and clone this repository.
-2. Make some changes as required.
-3. Write unit test to showcase its functionality.
-4. Submit a pull request under `development` branch.
+1. Create a new issue on github.
+2. Fork and clone this repository.
+3. Make some changes as required.
+4. Write unit test to showcase its functionality.
+5. Submit a pull request under `main` branch.
 
 #### Run this project on your local machine.
 1. create a virtual environment on the project root directory.
