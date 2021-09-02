@@ -25,10 +25,6 @@ def get_main_ctx_view(func:t.Callable):
     
     is_response:bool = True if response_param is not None else False
 
-    next_param = signature(func).parameters.get('next', None)
-
-    is_next:bool = True if next_param is not None else False
-
     if is_async_func(func) is not True:
         @wraps(func)
         def decorator(*args, **kwargs):
@@ -44,11 +40,6 @@ def get_main_ctx_view(func:t.Callable):
                 else:
                     args.insert(0, Response())
             
-            if is_next is True:
-                args:list = list(args)
-                if len(args) == 1:
-                    ...
-
             args:tuple = tuple(args)
             return func(*args, **kwargs)
         return decorator
