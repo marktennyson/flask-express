@@ -1,7 +1,7 @@
 from setuptools import setup,find_packages
 
 
-VERSION_INFO = (0, 1, 0)
+VERSION_INFO = (0, 1, 1)
 AUTHOR = "Aniket Sarkar"
 
 with open("README.md", "r") as f:
