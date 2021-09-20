@@ -28,3 +28,9 @@
 
 class One:
     one = 1
+    def __call__(self):
+        return 0
+
+o = One()
+
+print (callable(o))
