@@ -61,11 +61,12 @@ class Response(ResponseBase):
     """
     The default response class for flask-express app.
     """
-    status_code = 200
+    status_code:t.Literal[200] = 200
 
     def __init__(self, *wargs, **kwargs):
 
         super(Response, self).__init__(*wargs, **kwargs)
+        
 
     def flash(self, message:str, category:str="info") -> t.Type["Response"]:
         """
@@ -490,7 +491,7 @@ class Response(ResponseBase):
         It takes the same arguments as clear_cookies.
         """
         return self.clear_cookie(*wargs, **kwargs)
-        
+
 
     def make_response(self,
                 response: t.Optional[
@@ -524,3 +525,19 @@ class Response(ResponseBase):
                 direct_passthrough=self.direct_passthrough, 
                 headers=self.headers
                 )
+
+    def response_from_obj(self, rv:"Response") -> "Response":
+        """
+        take a response object as the parameter and 
+        return the new response object from the old instance.
+
+        :param rv: the response object
+        """
+        return self.make_response(
+            rv.response,
+            rv.status,
+            rv.headers,
+            rv.mimetype,
+            rv.content_type,
+            rv.direct_passthrough,
+        )
