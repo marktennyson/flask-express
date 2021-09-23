@@ -1,3 +1,5 @@
 recursive-exclude flask-express/examples *
 
 recursive-exclude docs/*
+
+recursive-exclude docs/*

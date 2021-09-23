@@ -51,7 +51,6 @@ class FlaskExpress(Flask):
                             instance_relative_config=instance_relative_config, 
                             static_host=static_host)
         self.config['ATTACHMENTS_FOLDER'] = path.join(path.abspath(path.dirname(self.import_name)), "attachments")
-        self.url_map.strict_slashes = False
 
 
     @setupmethod
@@ -203,8 +202,7 @@ class FlaskExpress(Flask):
                 # evaluate a WSGI callable, or coerce a different response
                 # class to the correct type
                 try:
-                    print ("force block executing.")
-                    rv = self.response_class().__class__.force_type(rv, grequest.environ)  # type: ignore  # noqa: B950
+                    rv = self.response_class().force_type(rv, grequest.environ)  # type: ignore  # noqa: B950
                 except TypeError as e:
                     raise TypeError(
                         f"{e}\nThe view function did not return a valid"
@@ -220,19 +218,9 @@ class FlaskExpress(Flask):
                     f" callable, but it was a {type(rv).__name__}."
                 )
 
-        rv = t.cast(Response, rv)
-        # prefer the status if it was provided
-        if status is not None:
-            if isinstance(status, (str, bytes, bytearray)):
-                rv.status = status  # type: ignore
-            else:
-                rv.status_code = status
-
-        # extend existing headers with provided headers
-        if headers:
-            rv.headers.update(headers)
-
-        return self.response_class().response_from_obj(rv)
+        rv = t.cast(Response, rv)        
+        
+        return self.response_class().make_response_from_obj(rv)
 
 
     def listen(self, 

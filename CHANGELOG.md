@@ -7,3 +7,5 @@
 - Some typo fixed at README.md.
 - Some typo fixed at Munch module.
 - Aded the proper logo.
+- Fixed `flask-admin` related issue.
+- Added __MKDocs__ based documentation.

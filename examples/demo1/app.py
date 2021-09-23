@@ -27,6 +27,10 @@ _ = Migrate(app, db)
 def index(req:"Request", res:"Response"):
     return res.json(name='index')
 
+@app.get("/index")
+def index_2(req:"Request", res:"Response"):
+    return res.flash("message").end(404)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
