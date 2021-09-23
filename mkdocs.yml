@@ -1,0 +1,56 @@
+site_name: Flask Express
+site_description: provide the interactive service like expressJs to the flask app.
+site_url: https://marktennyson.github.io/flask-express
+dev_addr: 127.0.0.1:8080
+
+theme:
+  name: material
+  palette:
+  - scheme: default
+    primary: teal
+    accent: amber
+    toggle:
+      icon: material/lightbulb-outline
+      name: Switch to light mode
+  - scheme: slate
+    primary: teal
+    accent: amber
+    toggle:
+      icon: material/lightbulb
+      name: Switch to dark mode
+  logo: https://camo.githubusercontent.com/ac5549cf1ea281ad3422b09f0de31cffa09d95f817ff8f95d15865cf15ab8a48/68747470733a2f2f746f72746f6973652d6f726d2e72656164746865646f63732e696f2f656e2f6c61746573742f5f7374617469632f746f72746f6973652e706e67
+  favicon: https://camo.githubusercontent.com/ac5549cf1ea281ad3422b09f0de31cffa09d95f817ff8f95d15865cf15ab8a48/68747470733a2f2f746f72746f6973652d6f726d2e72656164746865646f63732e696f2f656e2f6c61746573742f5f7374617469632f746f72746f6973652e706e67
+  features:
+  - search.suggest
+  - search.highlight
+  - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github-alt
+
+repo_name: marktennyson/Flask-Express
+repo_url: https://github.com/marktennyson/flask-express
+
+plugins:
+- search
+- markdownextradata:
+    data: data
+
+markdown_extensions:
+  - attr_list
+  - toc:
+      permalink: true
+  
+  - pymdownx.highlight:
+      linenums: false
+    
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+  - pymdownx.superfences
+
+nav:
+  - Flask-Tortoise: index.md
+  - QuerySet: queryset.md
+  - Examples: examples.md
+  - Tutorial: tutorial.md
+  - Command Line: cli.md

@@ -61,11 +61,12 @@ class Response(ResponseBase):
     """
     The default response class for flask-express app.
     """
-    status_code = 200
+    status_code:t.Literal[200] = 200
 
     def __init__(self, *wargs, **kwargs):
 
         super(Response, self).__init__(*wargs, **kwargs)
+        
 
     def flash(self, message:str, category:str="info") -> t.Type["Response"]:
         """
@@ -101,7 +102,7 @@ class Response(ResponseBase):
         if isinstance(content, (dict, list)):
             return self.json(content)
 
-        if isinstance(content, Munch): # for munch object.
+        if isinstance(content, Munch) or issubclass(content, Munch): # for munch object.
             return self.json(content.toDict())
 
         try:
@@ -111,7 +112,7 @@ class Response(ResponseBase):
         except JSONDecodeError:
             return self.make_response(content)
 
-        except Exception as e:
+        except Exception:
             raise TypeError("provided data type is not supported for `send` function.")
 
     def json(self, *wargs:t.Any, **kwargs:t.Any) -> "Response":
@@ -490,7 +491,7 @@ class Response(ResponseBase):
         It takes the same arguments as clear_cookies.
         """
         return self.clear_cookie(*wargs, **kwargs)
-        
+
 
     def make_response(self,
                 response: t.Optional[
@@ -524,3 +525,27 @@ class Response(ResponseBase):
                 direct_passthrough=self.direct_passthrough, 
                 headers=self.headers
                 )
+
+    def make_response_from_obj(self, rv:"Response", headers=None, status=None) -> "Response":
+        """
+        take a response object as the parameter and 
+        return the new response object from the old instance.
+
+        :param rv: the response object
+        """
+        self.status = rv.status
+        self.status_code = rv.status_code
+        self.headers = rv.headers
+        self.content_type = rv.content_type
+        self.direct_passthrough = rv.direct_passthrough
+
+        if headers is not None:
+            self.headers.update(headers)
+        
+        if status is not None:
+            if isinstance(status, (str, bytes, bytearray)):
+                self.status = status  # type: ignore
+            else:
+                self.status_code = status
+        
+        return self.make_response(rv.response)
