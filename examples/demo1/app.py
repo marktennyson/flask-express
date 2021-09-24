@@ -24,8 +24,8 @@ admin.add_view(ModelView(AgentChangePasswordOtp, db.session))
 _ = Migrate(app, db)
 
 @app.get('/')
-def index(req:"Request", res:"Response"):
-    return res.json(name='index')
+def index(req:"Request", response:"Response"):
+    return response.json(name='index')
 
 @app.get("/index")
 def index_2(req:"Request", res:"Response"):

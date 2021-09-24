@@ -11,3 +11,9 @@
 ## 0.1.2
 - Fixed `flask-admin` related issue.
 - Added __MKDocs__ based documentation.
+
+## 0.1.3
+- Fixed attachment directory related issue
+- Now the user have the power to add custom attachment folder.
+- showing proper error message when attached file is absent at the attachment directory.
+- added more CamelCase method to the `response.Response` class.

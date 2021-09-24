@@ -187,6 +187,20 @@ class Response(ResponseBase):
         self.status_code = code
         return self
 
+    def setStatus(self, code:int) -> t.Type["Response"]:
+        """
+        set the web response status code.
+        :param code: 
+            The web response status.
+        :for example::
+
+            @app.route("/set-status")
+            def set_statuser(req, res):
+                return res.set_status(404).send("your requested page is not found.")
+        """
+        self.status_code = code
+        return self
+
     def render(self, template_or_raw:str, *wargs:t.Any, **context:t.Any) -> t.Type[str]:
         """
         Renders a html and sends the rendered HTML string to the client.
@@ -333,9 +347,11 @@ class Response(ResponseBase):
                 filename = req.query.filename
                 return res.attachment(file_name)
         """
-        return send_from_directory(current_app.config['ATTACHMENTS_FOLDER'], 
-                    file_name, 
-                    as_attachment=True), self.status_code
+        return Utils.send_from_directory(
+            current_app.config['ATTACHMENTS_FOLDER'], 
+            file_name, 
+            as_attachment=True
+            ), self.status_code
 
     def send_file(self,
             path_or_file: t.Union["PathLike", str, t.BinaryIO],
@@ -352,6 +368,62 @@ class Response(ResponseBase):
             ] = None,
             cache_timeout: t.Optional[int] = None
             ) -> t.Type["Response"]:
+        """
+        Send the contents of a file to the client.
+        Its internally using the send_file method from werkzeug.
+
+        :param path_or_file: The path to the file to send, relative to the
+        current working directory if a relative path is given.
+        Alternatively, a file-like object opened in binary mode. Make
+        sure the file pointer is seeked to the start of the data.
+        :param mimetype: The MIME type to send for the file. If not
+            provided, it will try to detect it from the file name.
+        :param as_attachment: Indicate to a browser that it should offer to
+            save the file instead of displaying it.
+        :param download_name: The default name browsers will use when saving
+            the file. Defaults to the passed file name.
+        :param conditional: Enable conditional and range responses based on
+            request headers. Requires passing a file path and ``environ``.
+        :param etag: Calculate an ETag for the file, which requires passing
+            a file path. Can also be a string to use instead.
+        :param last_modified: The last modified time to send for the file,
+            in seconds. If not provided, it will try to detect it from the
+            file path.
+        :param max_age: How long the client should cache the file, in
+            seconds. If set, ``Cache-Control`` will be ``public``, otherwise
+            it will be ``no-cache`` to prefer conditional caching.
+        """
+        return file_sender(
+            path_or_file=path_or_file,
+            environ=request.environ,
+            mimetype=mimetype,
+            as_attachment=as_attachment,
+            download_name=download_name,
+            attachment_filename=attachment_filename,
+            conditional=conditional,
+            etag=etag,
+            add_etags=add_etags,
+            last_modified=last_modified,
+            max_age=max_age,
+            cache_timeout=cache_timeout,
+        )
+
+    def sendFile(
+        self,
+        path_or_file: t.Union["PathLike", str, t.BinaryIO],
+        mimetype: t.Optional[str] = None,
+        as_attachment: bool = False,
+        download_name: t.Optional[str] = None,
+        attachment_filename: t.Optional[str] = None,
+        conditional: bool = True,
+        etag: t.Union[bool, str] = True,
+        add_etags: t.Optional[bool] = None,
+        last_modified: t.Optional[t.Union["datetime", int, float]] = None,
+        max_age: t.Optional[
+            t.Union[int, t.Callable[[t.Optional[str]], t.Optional[int]]]
+        ] = None,
+        cache_timeout: t.Optional[int] = None
+        ) -> "Response":
         """
         Send the contents of a file to the client.
         Its internally using the send_file method from werkzeug.
@@ -549,3 +621,6 @@ class Response(ResponseBase):
                 self.status_code = status
         
         return self.make_response(rv.response)
+
+
+from ._helper import Utils # added at bottom to solve the circular import issue.

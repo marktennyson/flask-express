@@ -5,7 +5,6 @@ Please contribute to this project.
 from os import path
 
 from werkzeug.datastructures import Headers
-from werkzeug.wrappers.response import Response as BaseResponse
 
 from flask.scaffold import setupmethod
 from flask.json import jsonify
@@ -40,17 +39,21 @@ class FlaskExpress(Flask):
         instance_relative_config: bool = False,
         root_path: t.Optional[str] = None,
     ) -> None:
-        super().__init__(import_name=import_name, 
-                            static_url_path=static_url_path, 
-                            static_folder=static_folder, 
-                            host_matching=host_matching, 
-                            subdomain_matching=subdomain_matching,
-                            template_folder=template_folder,
-                            instance_path=instance_path,
-                            root_path=root_path,
-                            instance_relative_config=instance_relative_config, 
-                            static_host=static_host)
-        self.config['ATTACHMENTS_FOLDER'] = path.join(path.abspath(path.dirname(self.import_name)), "attachments")
+        super(FlaskExpress, self).__init__(
+            import_name=import_name, 
+            static_url_path=static_url_path, 
+            static_folder=static_folder, 
+            host_matching=host_matching, 
+            subdomain_matching=subdomain_matching,
+            template_folder=template_folder,
+            instance_path=instance_path,
+            root_path=root_path,
+            instance_relative_config=instance_relative_config, 
+            static_host=static_host
+            )
+        attachment_loc = path.join(path.abspath(path.dirname(self.import_name)), "attachments")
+        self.config.setdefault("ATTACHMENTS_FOLDER", attachment_loc)
+        
 
 
     @setupmethod

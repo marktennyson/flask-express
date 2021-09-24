@@ -1,14 +1,15 @@
 from flask_express import FlaskExpress
-from flask import session
+from flask import session, current_app
 from flask_express.typing import Request, Response
 
-app = FlaskExpress(__name__)
+app = FlaskExpress('aniket')
 
 
 app.config['SECRET_KEY'] = "this is the secret key."
+# app.config['ATTACHMENTS_FOLDER'] = 'templates'
 
-@app.route("/")
-async def index(req:Request, res:Response):
+@app.route("/<s>")
+async def index(req:Request, res:Response, s):
     context = dict(name="Aniket sarkar", description="basic demo page.")
     return res.render("index.html", context=context)
 
@@ -28,7 +29,8 @@ def mrp(req:Request, res:Response):
     # print (res.headers)
     # return res.json(id=1)
     # print (app.config)
-    return res.attachment("golang.png")
+    # print (app.config['ATTACHMENTS_FOLDER'])
+    return res.attachment("index.html")
 
 @app.route("/check-session")
 def check_session(req:Request, res:Response):
