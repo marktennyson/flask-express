@@ -221,8 +221,9 @@ class FlaskExpress(Flask):
                     f" callable, but it was a {type(rv).__name__}."
                 )
 
-        rv = t.cast(Response, rv)        
-        
+        rv = t.cast(Response, rv) 
+        print ("mail")       
+        print (rv.data)
         return self.response_class().make_response_from_obj(rv)
 
 

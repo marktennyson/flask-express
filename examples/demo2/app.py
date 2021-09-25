@@ -8,8 +8,8 @@ app = FlaskExpress('aniket')
 app.config['SECRET_KEY'] = "this is the secret key."
 # app.config['ATTACHMENTS_FOLDER'] = 'templates'
 
-@app.route("/<s>")
-async def index(req:Request, res:Response, s):
+@app.route("/")
+async def index(req:Request, res:Response):
     context = dict(name="Aniket sarkar", description="basic demo page.")
     return res.render("index.html", context=context)
 
@@ -52,7 +52,7 @@ def check_query_params(req:Request, res:Response):
 
 @app.get("/check-headers/")
 def check_headers(req:Request, res:Response):
-    return res.send(req.header['Accept-Encoding'])
+    return res.send(req.header["Accept-Encoding"])
 
 @app.get("/redirect")
 def redirector(req:Request, res:Response):
@@ -67,6 +67,10 @@ def set_session(req:Request, res:Response):
 def get_session(req:Request, res:Response):
     username = req.session.get('username')
     return res.send(dict(username=username))
+
+@app.get("/check-flash")
+def check_flash(req:Request, res:Response):
+    return res.json(name="test_simple_json")
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
