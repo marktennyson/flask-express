@@ -70,7 +70,7 @@ def get_session(req:Request, res:Response):
 
 @app.get("/check-flash")
 def check_flash(req:Request, res:Response):
-    return res.json(name="test_simple_json")
+    return res.set_status(403).send(dict(name="test_simple_json"))
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)

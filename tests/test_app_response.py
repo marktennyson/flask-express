@@ -117,3 +117,37 @@ def test_json_response(app:"FlaskExpress", client):
     assert rv_simple.data == b'{"name": "test_simple_json"}'
     assert rv_list.data == b'[1, 2, 3, 4]'
     assert rv_dict.data == b'{"data": "this is data"}'
+
+def test_set_status_response(app:"FlaskExpress", client):
+    @app.get("/test-set-status-201")
+    def test_set_status_201_response(req, res):
+        return res.set_status(201).end()
+
+    @app.get("/test-set-status-404")
+    def test_set_status_404_response(req,res):
+        return res.set_status(404).end()
+
+    @app.get("/test-set-status-500")
+    def test_set_status_500_response(req,res):
+        return res.set_status(500).end()
+
+    @app.get("/test-set-status-403-with-data")
+    def test_set_status_403_with_data(req,res):
+        return res.set_status(403).send("simple data")
+
+    rv_201 = client.get("/test-set-status-201")
+    rv_404 = client.get("/test-set-status-404")
+    rv_403 = client.get("/test-set-status-403-with-data")
+    rv_500 = client.get("/test-set-status-500")
+
+    assert rv_201.status_code == 201
+    assert rv_404.status_code == 404
+    assert rv_500.status_code == 500
+    
+    assert rv_403.status_code == 403
+    assert rv_403.data == b'simple data'
+
+def test_render_response(app:"FlaskExpress", client):
+    @app.get("/test-html-render")
+    def test_html_render(req, res):
+        return res.render("index.html")

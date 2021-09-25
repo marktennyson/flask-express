@@ -1,12 +1,11 @@
 ## 0.1.0
-
 - renamed the module name to flask-express from flaske to make it a extension of Flask.
 
 ## 0.1.1
 
 - Some typo fixed at README.md.
 - Some typo fixed at Munch module.
-- Aded the proper logo.
+- Added the proper logo.
 
 ## 0.1.2
 - Fixed `flask-admin` related issue.
@@ -18,3 +17,4 @@
 - showing proper error message when attached file is absent at the attachment directory.
 - added more CamelCase method to the `response.Response` class.
 - fixed `issubclass` checking error for different contents at `response.Response.send` method.
+- fixed `status_code` method for `response.Response` class not working.

@@ -61,11 +61,11 @@ class Response(ResponseBase):
     """
     The default response class for flask-express app.
     """
-    status_code:t.Literal[200] = 200
 
     def __init__(self, *wargs, **kwargs):
 
         super(Response, self).__init__(*wargs, **kwargs)
+        self.status_flag = False
         
 
     def flash(self, message:str, category:str="info") -> t.Type["Response"]:
@@ -185,6 +185,7 @@ class Response(ResponseBase):
                 return res.set_status(404).send("your requested page is not found.")
         """
         self.status_code = code
+        self.status_flag = True
         return self
 
     def setStatus(self, code:int) -> t.Type["Response"]:
@@ -198,8 +199,7 @@ class Response(ResponseBase):
             def set_statuser(req, res):
                 return res.set_status(404).send("your requested page is not found.")
         """
-        self.status_code = code
-        return self
+        return self.set_status(code)
 
     def render(self, template_or_raw:str, *wargs:t.Any, **context:t.Any) -> t.Type[str]:
         """
@@ -572,7 +572,7 @@ class Response(ResponseBase):
         :param rv: the response object
         """
         self.status = rv.status
-        self.status_code = rv.status_code
+        self.status_code = self.status_code if self.status_flag is True else rv.status_code
         self.headers = rv.headers
         self.content_type = rv.content_type
         self.direct_passthrough = rv.direct_passthrough
@@ -602,19 +602,19 @@ class Response(ResponseBase):
                 ] = None,
                 mimetype: t.Optional[str] = None,
                 content_type: t.Optional[str] = None,
-                direct_passthrough: bool = False
+                direct_passthrough: bool = False,
+                status_code: t.Optional[int] = None,
                 ) -> t.Type["ResponseBase"]:
         """
         the base function for this class to create the final response.
         """
-
-        self.status_code = status or self.status_code
+        self.status = status or self.status
+        self.status_code =  status_code or self.status_code
         self.headers = headers or self.headers
         self.mimetype = mimetype or self.mimetype
         self.content_type = content_type or self.content_type
         self.direct_passthrough = direct_passthrough or self.direct_passthrough
-        # print ("data")
-        # print (self.data)
+
         return self.__class__(response=response, 
                 status=self.status, 
                 mimetype=self.mimetype, 

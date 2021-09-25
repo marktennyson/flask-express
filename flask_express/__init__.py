@@ -191,13 +191,14 @@ class FlaskExpress(Flask):
             )
 
         # make sure the body is an instance of the response class
+        respObj = self.response_class()
+        
         if not isinstance(rv, self.response_class):
             if isinstance(rv, (str, bytes, bytearray)):
                 # let the response class set the status and headers instead of
                 # waiting to do it manually, so that the class can handle any
                 # special logic
-                
-                rv = self.response_class().make_response(rv, status=status, headers=headers) # this requires a default type `Response` class.
+                rv = respObj.make_response(rv, status=status, headers=headers) # this requires a default type `Response` class.
                 status = headers = None
             elif isinstance(rv, dict):
                 rv = jsonify(rv)
@@ -205,7 +206,7 @@ class FlaskExpress(Flask):
                 # evaluate a WSGI callable, or coerce a different response
                 # class to the correct type
                 try:
-                    rv = self.response_class().force_type(rv, grequest.environ)  # type: ignore  # noqa: B950
+                    rv = respObj.force_type(rv, grequest.environ)  # type: ignore  # noqa: B950
                 except TypeError as e:
                     raise TypeError(
                         f"{e}\nThe view function did not return a valid"
@@ -222,9 +223,9 @@ class FlaskExpress(Flask):
                 )
 
         rv = t.cast(Response, rv) 
-        print ("mail")       
-        print (rv.data)
-        return self.response_class().make_response_from_obj(rv)
+        # print ("mail")       
+        # print (rv.data)
+        return respObj.make_response_from_obj(rv)
 
 
     def listen(self, 
