@@ -26,11 +26,14 @@
 # if __name__ == "__main__":
 #     app.run(debug=True)
 
-class One:
-    one = 1
-    def __call__(self):
-        return 0
+# class One:
+#     one = 1
+#     def __call__(self):
+#         return 0
 
-o = One()
+# o = One()
 
-print (callable(o))
+# print (callable(o))
+
+import os
+print (os.path.abspath(os.path.dirname(__file__)))

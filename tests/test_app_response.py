@@ -1,4 +1,5 @@
 import typing as t
+import os as os
 
 if t.TYPE_CHECKING:
     from flask_express import FlaskExpress
@@ -148,6 +149,35 @@ def test_set_status_response(app:"FlaskExpress", client):
     assert rv_403.data == b'simple data'
 
 def test_render_response(app:"FlaskExpress", client):
-    @app.get("/test-html-render")
-    def test_html_render(req, res):
-        return res.render("index.html")
+    @app.get("/test-raw-html-render")
+    def test_raw_html_render(req, res):
+        return res.render("<h1>This is the index page</h1>")
+
+    # @app.get("/test-html-file-render")
+    # def test_html_file_render(req, res):
+    #     return res.render("index.html")
+
+    @app.get("/test-raw-html-render-with-context")
+    def test_raw_html_render_with_context(req, res):
+        return res.render("<h1>This is the {{index}} page</h1>", index='index.html')
+
+    rv_raw_html = client.get("/test-raw-html-render")
+    rv_raw_ctx_html = client.get("/test-raw-html-render-with-context")
+    # rv_file_html s= client.get("/test-file-html-render")
+
+    assert rv_raw_html.data == b'<h1>This is the index page</h1>'
+    assert rv_raw_ctx_html.data == b"<h1>This is the index.html page</h1>"
+    # assert rv_file_html.data == b'<h1>This is the index page</h1>'
+
+def test_attachment_response(app:"FlaskExpress", client):
+    @app.get("/test-attachment-response")
+    def test_attachment_response(req, res):        
+        return res.attachment("index.html")
+
+    rv_test_attachment = client.get("/test-attachment-response")
+    assert rv_test_attachment.status_code == 200
+
+def test_get_set_header(app:"FlaskExpress", client):
+    @app.get("/test-get-set-header")
+    def test_get_set_header(req, res):
+        ...

@@ -30,7 +30,7 @@ def mrp(req:Request, res:Response):
     # return res.json(id=1)
     # print (app.config)
     # print (app.config['ATTACHMENTS_FOLDER'])
-    return res.attachment("index.html")
+    return res.attachment("hello.txt")
 
 @app.route("/check-session")
 def check_session(req:Request, res:Response):
