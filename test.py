@@ -13,7 +13,7 @@
 # @app.route("/set-status")
 # def set_statuser(req:Request, res:Response):
 #     # return res.Response(json.dumps({"status":200}), mimetype="application/json")
-#     return res.set_status(404).send("your requested page is not found.")
+#     return res.send_status(404).send("your requested page is not found.")
 
 # @app.route("/mrp")
 # def mrp(req:Request, res:Response):

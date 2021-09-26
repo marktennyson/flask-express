@@ -142,14 +142,14 @@ def get_form_data(req, res):
 
 #### Response class
 
-##### function - set_status
+##### function - send_status
 This is used to set the response header status.
 
 for example:
 ```python
 @app.route("/set-status")
 def set_statuser(req, res):
-    return res.set_status(404).send("your requested page is not found.")
+    return res.send_status(404).send("your requested page is not found.")
 ```
 
 ##### function - flash
@@ -173,7 +173,7 @@ def sender(req, res):
     #or
     return res.send("<h1>hello world</h1>")
     #or
-    return res.set_status(404).send("not found")
+    return res.send_status(404).send("not found")
 ```
 
 ##### function - json

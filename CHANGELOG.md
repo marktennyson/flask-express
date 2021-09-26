@@ -16,5 +16,7 @@
 - Now the user have the power to add custom attachment folder.
 - showing proper error message when attached file is absent at the attachment directory.
 - added more CamelCase method to the `response.Response` class.
-- fixed `issubclass` checking error for different contents at `response.Response.send` method.
-- fixed `status_code` method for `response.Response` class not working.
+- Fixed `issubclass` checking error for different contents at `response.Response.send` method.
+- Fixed `status_code` method for `response.Response` class not working.
+- Fixed `response.Response.type` method.
+- Renamed `response.Response.set_staus` and `response.Response.setStatus` methods to `response.Response.send_status` and `response.Response.sendStatus` responsively.

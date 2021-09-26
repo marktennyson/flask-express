@@ -223,8 +223,8 @@ class FlaskExpress(Flask):
                 )
 
         rv = t.cast(Response, rv) 
-        # print ("mail")       
-        # print (rv.data)
+        print ("mail")       
+        print (rv.headers)
         return respObj.make_response_from_obj(rv)
 
 

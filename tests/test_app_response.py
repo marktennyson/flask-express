@@ -122,19 +122,19 @@ def test_json_response(app:"FlaskExpress", client):
 def test_set_status_response(app:"FlaskExpress", client):
     @app.get("/test-set-status-201")
     def test_set_status_201_response(req, res):
-        return res.set_status(201).end()
+        return res.send_status(201).end()
 
     @app.get("/test-set-status-404")
     def test_set_status_404_response(req,res):
-        return res.set_status(404).end()
+        return res.send_status(404).end()
 
     @app.get("/test-set-status-500")
     def test_set_status_500_response(req,res):
-        return res.set_status(500).end()
+        return res.send_status(500).end()
 
     @app.get("/test-set-status-403-with-data")
     def test_set_status_403_with_data(req,res):
-        return res.set_status(403).send("simple data")
+        return res.send_status(403).send("simple data")
 
     rv_201 = client.get("/test-set-status-201")
     rv_404 = client.get("/test-set-status-404")
@@ -177,7 +177,54 @@ def test_attachment_response(app:"FlaskExpress", client):
     rv_test_attachment = client.get("/test-attachment-response")
     assert rv_test_attachment.status_code == 200
 
-def test_get_set_header(app:"FlaskExpress", client):
-    @app.get("/test-get-set-header")
-    def test_get_set_header(req, res):
-        ...
+def test_get_set_header_response(app:"FlaskExpress", client):
+    @app.get("/test-get-set-header-tuple")
+    def test_get_set_header_tuple(req, res):
+        return res.set('Content-Type', 'application/text').end()
+
+    @app.get("/test-get-set-header-dict")
+    def test_get_set_header_dict(req, res):
+        return res.set({'Content-Type': 'application/json'}).end()
+
+    rv_test_gs_tuple = client.get("/test-get-set-header-tuple")
+    rv_test_gs_dict = client.get("/test-get-set-header-dict")
+
+    assert rv_test_gs_tuple.status_code == 200
+    assert rv_test_gs_tuple.get('Content-Type') == 'application/text'
+    assert rv_test_gs_tuple.headers["Content-Type"] == "application/text"
+
+    assert rv_test_gs_dict.status_code == 200
+    assert rv_test_gs_dict.get('Content-Type') == 'application/json'
+    assert rv_test_gs_dict.headers["Content-Type"] == "application/json"
+
+
+def test_type_response(app:"FlaskExpress", client):
+    @app.get("/test-type-full")
+    def test_type_response_full(req, res):
+        return res.type("application/json").end()
+    
+    @app.get("/test-type-half-with-dot")
+    def test_type_response_half_with_dot(req, res):
+        return res.type(".html").end()
+
+    @app.get("/test-type-half-without-dot")
+    def test_type_response_half_without_dot(req, res):
+        return res.type("js").end()
+
+    rv_full = client.get("/test-type-full")
+    rv_hwd = client.get("/test-type-half-with-dot")
+    rv_hwod = client.get("/test-type-half-without-dot")
+
+    assert rv_full.status_code == 200
+    assert rv_full.headers["content-type"] == "application/json"
+
+    assert rv_hwd.status_code == 200
+    assert rv_hwd.headers["content-type"] == "text/html; charset=utf-8"
+
+    assert rv_hwod.status_code == 200
+    assert rv_hwod.headers["content-type"] == "application/javascript; charset=utf-8"
+
+# def test_set_cookies_response(app:"FlaskExpress", client):
+#     @app.get("/test-set-cookie")
+#     def test_set_cookies_response(req, res):
+#         return res.

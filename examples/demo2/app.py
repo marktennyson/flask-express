@@ -16,7 +16,7 @@ async def index(req:Request, res:Response):
 @app.route("/set-status")
 def set_statuser(req:Request, res:Response):
     # return res.Response(json.dumps({"status":200}), mimetype="application/json")
-    return res.set_status(404).send("your requested page is not found.")
+    return res.send_status(404).send("your requested page is not found.")
 
 @app.route("/mrp")
 def mrp(req:Request, res:Response):
@@ -56,7 +56,7 @@ def check_headers(req:Request, res:Response):
 
 @app.get("/redirect")
 def redirector(req:Request, res:Response):
-    return res.set_status(308).redirect("https://www.google.com")
+    return res.send_status(308).redirect("https://www.google.com")
 
 @app.get("/set-session")
 def set_session(req:Request, res:Response):
@@ -70,7 +70,14 @@ def get_session(req:Request, res:Response):
 
 @app.get("/check-flash")
 def check_flash(req:Request, res:Response):
-    return res.set_status(403).send(dict(name="test_simple_json"))
+    return res.send_status(403).send(dict(name="test_simple_json"))
+
+@app.get("/check-type")
+def check_type(req:Request, res:Response):
+    return res.type("json").end()
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)

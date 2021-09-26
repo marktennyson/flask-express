@@ -3,7 +3,6 @@ from flask import (json,
             flash, 
             send_file as file_sender, 
             request,
-            send_from_directory
             )
 from json.decoder import JSONDecodeError
 from flask.wrappers import Response as ResponseBase
@@ -14,6 +13,7 @@ import typing as t
 from munch import Munch
 from werkzeug.exceptions import *
 from flask import current_app
+from mimetypes import MimeTypes
 from werkzeug.datastructures import Headers
 
 
@@ -96,7 +96,7 @@ class Response(ResponseBase):
                 #or
                 return res.send("<h1>hello world</h1>")
                 #or
-                return res.set_status(404).send("not found")
+                return res.send_status(404).send("not found")
         """
         
         if isinstance(content, (dict, list)):
@@ -173,7 +173,7 @@ class Response(ResponseBase):
         else:
             return self.make_response("")
 
-    def set_status(self, code:int) -> t.Type["Response"]:
+    def send_status(self, code:int) -> t.Type["Response"]:
         """
         set the web response status code.
         :param code: 
@@ -182,13 +182,13 @@ class Response(ResponseBase):
 
             @app.route("/set-status")
             def set_statuser(req, res):
-                return res.set_status(404).send("your requested page is not found.")
+                return res.send_status(404).send("your requested page is not found.")
         """
         self.status_code = code
         self.status_flag = True
         return self
 
-    def setStatus(self, code:int) -> t.Type["Response"]:
+    def sendStatus(self, code:int) -> t.Type["Response"]:
         """
         set the web response status code.
         :param code: 
@@ -197,9 +197,9 @@ class Response(ResponseBase):
 
             @app.route("/set-status")
             def set_statuser(req, res):
-                return res.set_status(404).send("your requested page is not found.")
+                return res.send_status(404).send("your requested page is not found.")
         """
-        return self.set_status(code)
+        return self.send_status(code)
 
     def render(self, template_or_raw:str, *wargs:t.Any, **context:t.Any) -> t.Type[str]:
         """
@@ -324,10 +324,14 @@ class Response(ResponseBase):
             _mimetype = type
         else:
             if not type.startswith("."):
-                _mimetype = f"file.{type}"
+                file_url = f"file.{type}"
             else:
-                _mimetype = f"file{type}"
-
+                file_url = f"file{type}"
+            
+            mimes = MimeTypes()
+            _mimetype = mimes.guess_type(file_url)[0]
+        #     print ("file_url:", file_url)
+        # print ("_mimetype:", _mimetype)
         return self.set('Content-Type', _mimetype)
 
     def attachment(self, file_name:str):
