@@ -1,5 +1,4 @@
 import typing as t
-import os as os
 
 if t.TYPE_CHECKING:
     from flask_express import FlaskExpress

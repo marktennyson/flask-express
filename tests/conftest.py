@@ -6,6 +6,7 @@ import typing as t
 
 if t.TYPE_CHECKING:
     from flask.testing import FlaskClient
+    from flask_express.response import Response
 
 BASE_DIR:str = os.path.abspath(os.path.dirname(__file__))
 
@@ -22,3 +23,7 @@ def app() -> "fe.FlaskExpress":
 @pt.fixture
 def client(app:"fe.FlaskExpress") -> "FlaskClient":
     return app.test_client()
+
+# @pt.fixture
+# def response(app:"fe.FlaskExpress") -> "Response":
+#     return 
