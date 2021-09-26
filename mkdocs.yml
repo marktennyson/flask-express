@@ -18,8 +18,8 @@ theme:
     toggle:
       icon: material/lightbulb
       name: Switch to dark mode
-  logo: https://camo.githubusercontent.com/ac5549cf1ea281ad3422b09f0de31cffa09d95f817ff8f95d15865cf15ab8a48/68747470733a2f2f746f72746f6973652d6f726d2e72656164746865646f63732e696f2f656e2f6c61746573742f5f7374617469632f746f72746f6973652e706e67
-  favicon: https://camo.githubusercontent.com/ac5549cf1ea281ad3422b09f0de31cffa09d95f817ff8f95d15865cf15ab8a48/68747470733a2f2f746f72746f6973652d6f726d2e72656164746865646f63732e696f2f656e2f6c61746573742f5f7374617469632f746f72746f6973652e706e67
+  logo: https://raw.githubusercontent.com/marktennyson/flask-express/main/logos/flask-express-logo.png
+  favicon: https://raw.githubusercontent.com/marktennyson/flask-express/main/logos/flask-express-logo.png
   features:
   - search.suggest
   - search.highlight
@@ -49,8 +49,9 @@ markdown_extensions:
   - pymdownx.superfences
 
 nav:
-  - Flask-Tortoise: index.md
-  - QuerySet: queryset.md
-  - Examples: examples.md
+  - Flask-Express: index.md
+  - Request Class: request.md
+  - Response Class: response.md
+  - Munch Class: munch.md
   - Tutorial: tutorial.md
-  - Command Line: cli.md
+  - Examples: examples.md
