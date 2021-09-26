@@ -330,8 +330,7 @@ class Response(ResponseBase):
             
             mimes = MimeTypes()
             _mimetype = mimes.guess_type(file_url)[0]
-        #     print ("file_url:", file_url)
-        # print ("_mimetype:", _mimetype)
+        
         return self.set('Content-Type', _mimetype)
 
     def attachment(self, file_name:str):
