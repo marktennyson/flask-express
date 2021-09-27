@@ -5,7 +5,7 @@
 [![Downloads](https://pepy.tech/badge/flask-express)](https://pepy.tech/project/flask-express) [![Downloads](https://pepy.tech/badge/flask-express/month)](https://pepy.tech/project/flask-express/month) [![Downloads](https://pepy.tech/badge/flask-express/week)](https://pepy.tech/project/flask-express/week)
 <br>
 
-#### contributor wanted : feel free to contact me at aniketsarkar@yahoo.com    
+#### contributor needed.  
 
 provide the interactive service like expressJs for the flask app.
 
@@ -292,6 +292,11 @@ make a http response. It's same as `Flask.wrappers.Request`
 
 ### Development
 
+#### Beautiful Contributors
+<a href="https://github.com/flaskAio/navycut/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=marktennyson/flask-express" />
+</a>
+
 #### Contribution procedure.
 1. Create a new issue on github.
 2. Fork and clone this repository.
@@ -307,3 +312,14 @@ make a http response. It's same as `Flask.wrappers.Request`
 5. The above command will install the `flask-express` module on your virtual environment.
 6. Now create a separate project inside the example folder and start testing for your code changes.
 7. If you face any difficulties to perform the above steps, then plese contact me at: `aniketsarkar@yahoo.com`.
+
+### Future Roadmap
+1. Middleware support.
+2. Implementation of all the apis of ExpressJs.
+3. Auto Swagger documentation using `flask-restplus` and `flask-pydantic` module.
+
+### License
+
+GNU General Public License v3 or later (GPLv3+)
+
+Copyright (c) 2021 Aniket Sarkar(aniketsarkar@yahoo.com)
