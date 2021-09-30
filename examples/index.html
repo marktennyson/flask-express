@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#some-basic-examples-of-flask-express" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -307,11 +312,105 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Examples
       </a>
       
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-with-flask-admin-flask-sqlalchemy" class="md-nav__link">
+    Example with flask-admin, flask-sqlalchemy
+  </a>
+  
+    <nav class="md-nav" aria-label="Example with flask-admin, flask-sqlalchemy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apppy-file" class="md-nav__link">
+    app.py file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelspy-file" class="md-nav__link">
+    models.py file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-with-flask-tortoise" class="md-nav__link">
+    Example with Flask-Tortoise
+  </a>
+  
+    <nav class="md-nav" aria-label="Example with Flask-Tortoise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apppy-file_1" class="md-nav__link">
+    app.py file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelspy-file_1" class="md-nav__link">
+    models.py file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        Changelog
+      </a>
     </li>
   
 
@@ -323,6 +422,85 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-with-flask-admin-flask-sqlalchemy" class="md-nav__link">
+    Example with flask-admin, flask-sqlalchemy
+  </a>
+  
+    <nav class="md-nav" aria-label="Example with flask-admin, flask-sqlalchemy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apppy-file" class="md-nav__link">
+    app.py file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelspy-file" class="md-nav__link">
+    models.py file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-with-flask-tortoise" class="md-nav__link">
+    Example with Flask-Tortoise
+  </a>
+  
+    <nav class="md-nav" aria-label="Example with Flask-Tortoise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apppy-file_1" class="md-nav__link">
+    app.py file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelspy-file_1" class="md-nav__link">
+    models.py file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -333,9 +511,270 @@
                   </a>
                 
                 
-                  <h1>Examples</h1>
-                
-                
+                <h1 id="some-basic-examples-of-flask-express">Some basic examples of Flask-Express<a class="headerlink" href="#some-basic-examples-of-flask-express" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">flask_express</span> <span class="kn">import</span> <span class="n">FlaskExpress</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">session</span><span class="p">,</span> <span class="n">current_app</span>
+<span class="kn">from</span> <span class="nn">flask_express.typing</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">Response</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FlaskExpress</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SECRET_KEY&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;this is the secret key.&quot;</span>
+<span class="c1"># app.config[&#39;ATTACHMENTS_FOLDER&#39;] = &#39;templates&#39;</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="n">Request</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="n">Response</span><span class="p">):</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Aniket sarkar&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;basic demo page.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">&quot;index.html&quot;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/set-status&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">set_statuser</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="n">Request</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="n">Response</span><span class="p">):</span>
+    <span class="c1"># return res.Response(json.dumps({&quot;status&quot;:200}), mimetype=&quot;application/json&quot;)</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send_status</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;your requested page is not found.&quot;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/mrp&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">mrp</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="n">Request</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="n">Response</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">current_app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ATTACHMENTS_FOLDER&quot;</span><span class="p">))</span>
+    <span class="n">res</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;application/json&quot;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">))</span>
+    <span class="n">res</span><span class="o">.</span><span class="n">set_cookie</span><span class="p">(</span><span class="s2">&quot;cookie_key&quot;</span><span class="p">,</span> <span class="s1">&#39;aniketsarkar&#39;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;ATTACHMENTS_FOLDER&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">attachment</span><span class="p">(</span><span class="s2">&quot;hello.txt&quot;</span><span class="p">)</span> <span class="c1"># attachment should be stored in attachment folder.</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/check-session&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">check_session</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="n">Request</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="n">Response</span><span class="p">):</span>
+    <span class="n">ss</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+    <span class="c1"># print (ss)</span>
+    <span class="n">ss</span><span class="p">[</span><span class="s1">&#39;name1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;aniket&#39;</span>
+    <span class="c1"># session[&#39;name&#39;] = &quot;aniket&quot;</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">ss</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/check-session-2/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">check_session_2</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="n">Request</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="n">Response</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">session</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;data2&quot;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/check-query-params/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">check_query_params</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="n">Request</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="n">Response</span><span class="p">):</span>
+    <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/check-headers/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">check_headers</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="n">Request</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="n">Response</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;Accept-Encoding&quot;</span><span class="p">])</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/redirect&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">redirector</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="n">Request</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="n">Response</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send_status</span><span class="p">(</span><span class="mi">308</span><span class="p">)</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="s2">&quot;https://www.google.com&quot;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/set-session&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">set_session</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="n">Request</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="n">Response</span><span class="p">):</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;aniketsarkar&#39;</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/get-session&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_session</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="n">Request</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="n">Response</span><span class="p">):</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">))</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/check-flash&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">check_flash</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="n">Request</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="n">Response</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send_status</span><span class="p">(</span><span class="mi">403</span><span class="p">)</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test_simple_json&quot;</span><span class="p">))</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/check-type&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">check_type</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="n">Request</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="n">Response</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="example-with-flask-admin-flask-sqlalchemy">Example with flask-admin, flask-sqlalchemy<a class="headerlink" href="#example-with-flask-admin-flask-sqlalchemy" title="Permanent link">&para;</a></h2>
+<h4 id="apppy-file">app.py file<a class="headerlink" href="#apppy-file" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">flask_express</span> <span class="kn">import</span> <span class="n">FlaskExpress</span>
+<span class="kn">from</span> <span class="nn">flask_admin</span> <span class="kn">import</span> <span class="n">Admin</span>
+<span class="kn">from</span> <span class="nn">flask_admin.contrib.sqla</span> <span class="kn">import</span> <span class="n">ModelView</span>
+<span class="kn">from</span> <span class="nn">flask_migrate</span> <span class="kn">import</span> <span class="n">Migrate</span>
+<span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">t</span>
+<span class="kn">from</span> <span class="nn">models</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">flask_express.typing</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">Response</span>
+
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FlaskExpress</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_DATABASE_URI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sqlite:///db.sqlite3&#39;</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_TRACK_MODIFICATIONS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SECRET_KEY&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;world-secret-key&#39;</span>
+
+<span class="n">admin</span> <span class="o">=</span> <span class="n">Admin</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;microblog&#39;</span><span class="p">,</span> <span class="n">template_mode</span><span class="o">=</span><span class="s1">&#39;bootstrap4&#39;</span><span class="p">)</span>
+
+<span class="n">db</span><span class="o">.</span><span class="n">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="n">admin</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">ModelView</span><span class="p">(</span><span class="n">AgentChangePasswordOtp</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="p">))</span>
+
+<span class="n">_</span> <span class="o">=</span> <span class="n">Migrate</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="s2">&quot;Request&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span><span class="s2">&quot;Response&quot;</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/index&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index_2</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="s2">&quot;Request&quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="s2">&quot;Response&quot;</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">end</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="modelspy-file">models.py file<a class="headerlink" href="#modelspy-file" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">db</span><span class="p">:</span><span class="s2">&quot;SQLAlchemy&quot;</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">AgentChangePasswordOtp</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">contactnumber</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+    <span class="n">otp</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+    <span class="n">created_on</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">DateTime</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="example-with-flask-tortoise">Example with Flask-Tortoise<a class="headerlink" href="#example-with-flask-tortoise" title="Permanent link">&para;</a></h2>
+<p><strong>Flask-Tortoise</strong> provides a simple asynchronous ORM service. Here I have tried to add some examples of <strong>Flask-Express</strong> with <strong>Flask-Tortoise</strong>.</p>
+<h4 id="apppy-file_1">app.py file<a class="headerlink" href="#apppy-file_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># from flask import jsonify, Flask</span>
+<span class="kn">from</span> <span class="nn">flask_express</span> <span class="kn">import</span> <span class="n">FlaskExpress</span>
+<span class="kn">from</span> <span class="nn">models</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
+<span class="kn">from</span> <span class="nn">script</span> <span class="kn">import</span> <span class="n">GenerateData</span>
+
+<span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">t</span>
+
+<span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">flask_express.typing</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">Response</span>
+
+
+<span class="n">STATUSES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;New&quot;</span><span class="p">,</span> <span class="s2">&quot;Old&quot;</span><span class="p">,</span> <span class="s2">&quot;Gone&quot;</span><span class="p">]</span>
+
+<span class="n">app</span><span class="p">:</span><span class="s2">&quot;FlaskExpress&quot;</span> <span class="o">=</span> <span class="n">FlaskExpress</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;TORTOISE_ORM_DATABASE_URI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sqlite://db.sqlite3&#39;</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;TORTOISE_ORM_MODELS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;models&quot;</span>
+
+<span class="n">models</span><span class="o">.</span><span class="n">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">list_all</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="s2">&quot;Request&quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="s2">&quot;Response&quot;</span><span class="p">):</span>
+    <span class="n">users</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Users</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">workers</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Workers</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">co_workers</span> <span class="o">=</span> <span class="k">await</span> <span class="n">CoWorker</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">(</span>
+        <span class="p">{</span><span class="s2">&quot;users&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">],</span> <span class="s2">&quot;workers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">worker</span><span class="p">)</span> <span class="k">for</span> <span class="n">worker</span> <span class="ow">in</span> <span class="n">workers</span><span class="p">],</span> <span class="s2">&quot;co-wrokers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">co_worker</span><span class="p">)</span> <span class="k">for</span> <span class="n">co_worker</span> <span class="ow">in</span> <span class="n">co_workers</span><span class="p">]}</span>
+    <span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/user&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">add_user</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="s2">&quot;Request&quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="s2">&quot;Response&quot;</span><span class="p">,</span> <span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Users</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">choice</span><span class="p">(</span><span class="n">STATUSES</span><span class="p">))</span>  <span class="c1"># nosec</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/worker&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">add_worker</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="s2">&quot;Request&quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="s2">&quot;Response&quot;</span><span class="p">,</span> <span class="p">):</span>
+    <span class="n">worker</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Workers</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">choice</span><span class="p">(</span><span class="n">STATUSES</span><span class="p">))</span>  <span class="c1"># nosec</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">worker</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/get-worker&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">get_worker</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="s2">&quot;Request&quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="s2">&quot;Response&quot;</span><span class="p">,</span> <span class="p">):</span>
+    <span class="n">worker</span><span class="p">:</span><span class="s2">&quot;Workers&quot;</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Workers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/co-workers&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">co_workers</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="s2">&quot;Request&quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="s2">&quot;Response&quot;</span><span class="p">,</span> <span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Users</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">co_worker</span><span class="p">:</span><span class="s2">&quot;CoWorker&quot;</span> <span class="o">=</span> <span class="k">await</span> <span class="n">CoWorker</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Aniket Sarkar&quot;</span><span class="p">,</span> <span class="n">rltn</span><span class="o">=</span><span class="n">user</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">co_worker</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/get-coworker/&lt;int:id&gt;&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">aniket</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="s2">&quot;Request&quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="s2">&quot;Response&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="n">pk</span><span class="o">=</span><span class="nb">id</span>
+    <span class="n">co_worker</span> <span class="o">=</span><span class="k">await</span> <span class="n">CoWorker</span><span class="o">.</span><span class="n">get_or_404</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">pk</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;user object not found at ID: </span><span class="si">{</span><span class="n">pk</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">co_worker</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/delete-coworker/&lt;int:id&gt;&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">delete_coworker</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="k">await</span> <span class="n">CoWorker</span><span class="o">.</span><span class="n">get_or_404</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">c</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+    <span class="k">return</span> <span class="s2">&quot;object deleted&quot;</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/sarkar&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">sarkar</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="s2">&quot;Request&quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="s2">&quot;Response&quot;</span><span class="p">,</span> <span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Users</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">first_or_404</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">user</span><span class="p">))</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/paginate&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">paginator</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="s2">&quot;Request&quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="s2">&quot;Response&quot;</span><span class="p">,</span> <span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Users</span><span class="o">.</span><span class="n">paginate</span><span class="p">()</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">user</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/create-data&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">create_data</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="s2">&quot;Request&quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="s2">&quot;Response&quot;</span><span class="p">):</span>
+    <span class="n">r1</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GenerateData</span><span class="o">.</span><span class="n">generate_user</span><span class="p">()</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GenerateData</span><span class="o">.</span><span class="n">generate_worker</span><span class="p">()</span>
+    <span class="n">r3</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GenerateData</span><span class="o">.</span><span class="n">generate_co_worker</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;Done&quot;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/create-co-worker&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">create_co_worker</span><span class="p">(</span><span class="n">req</span><span class="p">:</span><span class="s2">&quot;Request&quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="s2">&quot;Response&quot;</span><span class="p">):</span>
+    <span class="k">await</span> <span class="n">GenerateData</span><span class="o">.</span><span class="n">generate_co_worker</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;Done&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="modelspy-file_1">models.py file<a class="headerlink" href="#modelspy-file_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">flask_tortoise</span> <span class="kn">import</span> <span class="n">Tortoise</span><span class="p">,</span> <span class="n">Manager</span>
+
+<span class="n">models</span><span class="p">:</span><span class="s2">&quot;Tortoise&quot;</span> <span class="o">=</span> <span class="n">Tortoise</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">Users</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntField</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="c1"># name = fields.CharField(20, null=True)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;User </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">manager</span> <span class="o">=</span> <span class="n">Manager</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">Workers</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntField</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Worker </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">manager</span> <span class="o">=</span> <span class="n">Manager</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">CoWorker</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntField</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">rltn</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKeyField</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;models.Users&quot;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DatetimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">manager</span> <span class="o">=</span> <span class="n">Manager</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Co-Worker </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div>
                 
               
               
@@ -369,6 +808,21 @@
           </div>
         </a>
       
+      
+        
+        <a href="../changelog/" class="md-footer__link md-footer__link--next" aria-label="Next: Changelog" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Changelog
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
