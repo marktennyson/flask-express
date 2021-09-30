@@ -1,7 +1,7 @@
 site_name: Flask Express
 site_description: provide the interactive service like expressJs to the flask app.
 site_url: https://marktennyson.github.io/flask-express
-dev_addr: 127.0.0.1:8080
+dev_addr: 127.0.0.1:8081
 
 theme:
   name: material
@@ -31,6 +31,7 @@ repo_name: marktennyson/Flask-Express
 repo_url: https://github.com/marktennyson/flask-express
 
 plugins:
+- include-markdown
 - search
 - markdownextradata:
     data: data
@@ -55,3 +56,4 @@ nav:
   - Munch Class: munch.md
   - Tutorial: tutorial.md
   - Examples: examples.md
+  - Changelog: changelog.md
