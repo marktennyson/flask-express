@@ -22,3 +22,4 @@
 - Renamed `response.Response.set_staus` and `response.Response.setStatus` methods to `response.Response.send_status` and `response.Response.sendStatus` responsively.
 - Added more documentation.
 - docstring typo fixed at `request.Request` class.
+- Added more test cases.
