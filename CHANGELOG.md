@@ -11,7 +11,7 @@
 - Fixed `flask-admin` related issue.
 - Added __MKDocs__ based documentation.
 
-## 0.1.3
+## 0.1.3 [Upcoming]
 - Fixed attachment directory related issue
 - Now the user have the power to add custom attachment folder.
 - showing proper error message when attached file is absent at the attachment directory.
@@ -20,3 +20,5 @@
 - Fixed `status_code` method for `response.Response` class not working.
 - Fixed `response.Response.type` method.
 - Renamed `response.Response.set_staus` and `response.Response.setStatus` methods to `response.Response.send_status` and `response.Response.sendStatus` responsively.
+- Added more documentation.
+- docstring typo fixed at `request.Request` class.

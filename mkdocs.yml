@@ -53,7 +53,6 @@ nav:
   - Flask-Express: index.md
   - Request Class: request.md
   - Response Class: response.md
-  - Munch Class: munch.md
   - Tutorial: tutorial.md
   - Examples: examples.md
   - Changelog: changelog.md
