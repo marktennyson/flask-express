@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#request-class" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -247,10 +252,83 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Request Class
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Request Class
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-of-request-class" class="md-nav__link">
+    API of Request Class
+  </a>
+  
+    <nav class="md-nav" aria-label="API of Request Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#property-body-typeflask_expressmunchmunch" class="md-nav__link">
+    property body: Type[flask_express.munch.Munch]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-header-typeflask_expressmunchmunch" class="md-nav__link">
+    property header: Type[flask_express.munch.Munch]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-json-typeflask_expressmunchmunch" class="md-nav__link">
+    property json: Type[flask_express.munch.Munch]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-query-typeflask_expressmunchmunch" class="md-nav__link">
+    property query: Type[flask_express.munch.Munch]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-session-typeflasksessionsessionmixin" class="md-nav__link">
+    property session: Type[flask.session.SessionMixin]
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -266,21 +344,6 @@
     <li class="md-nav__item">
       <a href="../response/" class="md-nav__link">
         Response Class
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../munch/" class="md-nav__link">
-        Munch Class
       </a>
     </li>
   
@@ -338,6 +401,79 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-of-request-class" class="md-nav__link">
+    API of Request Class
+  </a>
+  
+    <nav class="md-nav" aria-label="API of Request Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#property-body-typeflask_expressmunchmunch" class="md-nav__link">
+    property body: Type[flask_express.munch.Munch]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-header-typeflask_expressmunchmunch" class="md-nav__link">
+    property header: Type[flask_express.munch.Munch]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-json-typeflask_expressmunchmunch" class="md-nav__link">
+    property json: Type[flask_express.munch.Munch]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-query-typeflask_expressmunchmunch" class="md-nav__link">
+    property query: Type[flask_express.munch.Munch]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-session-typeflasksessionsessionmixin" class="md-nav__link">
+    property session: Type[flask.session.SessionMixin]
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -348,9 +484,22 @@
                   </a>
                 
                 
-                  <h1>Request Class</h1>
-                
-                
+                <h1 id="request-class">Request Class<a class="headerlink" href="#request-class" title="Permanent link">&para;</a></h1>
+<p>Flask-Express has it's own <code>munch</code> based <code>Request</code> class to get all the request based params.</p>
+<h2 id="api-of-request-class">API of Request Class<a class="headerlink" href="#api-of-request-class" title="Permanent link">&para;</a></h2>
+<p><strong>class <code>flask_express.request.Request(*wargs, **kwargs)</code></strong></p>
+<p><strong>Bases</strong>: <code>flask.wrappers.Request</code></p>
+<p><strong>The default response class for the flask-express app.</strong></p>
+<h4 id="property-body-typeflask_expressmunchmunch"><strong>property</strong> <code>body</code>: <code>Type[flask_express.munch.Munch]</code><a class="headerlink" href="#property-body-typeflask_expressmunchmunch" title="Permanent link">&para;</a></h4>
+<p>it provides you the form based data.</p>
+<h4 id="property-header-typeflask_expressmunchmunch"><strong>property</strong> <code>header</code>: <code>Type[flask_express.munch.Munch]</code><a class="headerlink" href="#property-header-typeflask_expressmunchmunch" title="Permanent link">&para;</a></h4>
+<p>it provides you the headers based data.</p>
+<h4 id="property-json-typeflask_expressmunchmunch"><strong>property</strong> <code>json</code>: <code>Type[flask_express.munch.Munch]</code><a class="headerlink" href="#property-json-typeflask_expressmunchmunch" title="Permanent link">&para;</a></h4>
+<p>it provides you the json based data.</p>
+<h4 id="property-query-typeflask_expressmunchmunch"><strong>property</strong> <code>query</code>: <code>Type[flask_express.munch.Munch]</code><a class="headerlink" href="#property-query-typeflask_expressmunchmunch" title="Permanent link">&para;</a></h4>
+<p>it provides you the args based data.</p>
+<h4 id="property-session-typeflasksessionsessionmixin"><strong>property</strong> <code>session</code>: <code>Type[flask.session.SessionMixin]</code><a class="headerlink" href="#property-session-typeflasksessionsessionmixin" title="Permanent link">&para;</a></h4>
+<p>it provides you the default session object of flask globals as a property of <code>request.Request</code> class.</p>
                 
               
               

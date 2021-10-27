@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#response-class" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -262,26 +267,167 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Response Class
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Response Class
       </a>
       
-    </li>
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
-
+  
+  
     
-      
-      
-      
-
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-of-response-class" class="md-nav__link">
+    API of Response Class
+  </a>
   
-    <li class="md-nav__item">
-      <a href="../munch/" class="md-nav__link">
-        Munch Class
-      </a>
+    <nav class="md-nav" aria-label="API of Response Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-the-available-methods-are-listed-below" class="md-nav__link">
+    All the available methods are listed below:
+  </a>
+  
+    <nav class="md-nav" aria-label="All the available methods are listed below:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attachmentfile_name-str" class="md-nav__link">
+    attachment(file_name: str)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear_cookiekey-str-path-str-domain-optionalstr-none-secure-bool-false-httponly-bool-false-samesite-optionalstr-none-typeflask_expressresponseresponse" class="md-nav__link">
+    clear_cookie(key: str, path: str = '/', domain: Optional[str] = None, secure: bool = False, httponly: bool = False, samesite: Optional[str] = None)→ Type[flask_express.response.Response]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endcode-optionalint-none" class="md-nav__link">
+    end(code: Optional[int] = None)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flashmessage-str-category-str-info-typeflask_expressresponseresponse" class="md-nav__link">
+    flash(message: str, category: str = 'info')→ Type[flask_express.response.Response]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getkey-str-str" class="md-nav__link">
+    get(key: str)→ str
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonwargs-any-kwargs-any-typeflask_expressresponseresponse" class="md-nav__link">
+    json(*wargs: Any, kwargs: Any)→ Type[flask_express.response.Response]**
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make_responseresponse-optionalunioniterablebytes-bytes-iterablestr-str-none-status-optionalunionint-str-httpstatus-none-headers-optionalunionmappingstr-unionstr-int-iterableunionstr-int-iterabletuplestr-unionstr-int-none-mimetype-optionalstr-none-content_type-optionalstr-none-direct_passthrough-bool-false-typeresponsebase" class="md-nav__link">
+    make_response(response: Optional[Union[Iterable[bytes], bytes, Iterable[str], str]] = None, status: Optional[Union[int, str, HTTPStatus]] = None, headers: Optional[Union[Mapping[str, Union[str, int, Iterable[Union[str, int]]]], Iterable[Tuple[str, Union[str, int]]]]] = None, mimetype: Optional[str] = None, content_type: Optional[str] = None, direct_passthrough: bool = False)→ Type[ResponseBase]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirectroute-str" class="md-nav__link">
+    redirect(route: str)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendertemplate_or_raw-str-wargs-any-context-any-typestr" class="md-nav__link">
+    render(template_or_raw: str, *wargs: Any, context: Any)→ Type[str]**
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendcontent-unionstr-dict-listany-typeflask_expressresponseresponse" class="md-nav__link">
+    send(content: Union[str, dict, List[Any]])→ Type[flask_express.response.Response]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send_filepath_or_file-unionpathlike-str-binaryio-mimetype-optionalstr-none-as_attachment-bool-false-download_name-optionalstr-none-attachment_filename-optionalstr-none-conditional-bool-true-etag-unionbool-str-true-add_etags-optionalbool-none-last_modified-optionaluniondatetime-int-float-none-max_age-optionalunionint-callableoptionalstr-optionalint-none-cache_timeout-optionalint-none-typeresponse" class="md-nav__link">
+    send_file(path_or_file: Union[PathLike, str, BinaryIO], mimetype: Optional[str] = None, as_attachment: bool = False, download_name: Optional[str] = None, attachment_filename: Optional[str] = None, conditional: bool = True, etag: Union[bool, str] = True, add_etags: Optional[bool] = None, last_modified: Optional[Union[datetime, int, float]] = None, max_age: Optional[Union[int, Callable[[Optional[str]], Optional[int]]]] = None, cache_timeout: Optional[int] = None)→ Type[Response]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwargs" class="md-nav__link">
+    set(*wargs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_cookiekey-str-value-str-max_age-optionaluniontimedelta-int-none-expires-optionalunionstr-datetimedatetime-int-float-none-path-optionalstr-domain-optionalstr-none-secure-bool-false-httponly-bool-false-samesite-optionalstr-none-typeresponse" class="md-nav__link">
+    set_cookie(key: str, value: str = '', max_age: Optional[Union[timedelta, int]] = None, expires: Optional[Union[str, datetime.datetime, int, float]] = None, path: Optional[str] = '/', domain: Optional[str] = None, secure: bool = False, httponly: bool = False, samesite: Optional[str] = None)→ Type[Response]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send_statuscode-int-typeflask_expressresponseresponse" class="md-nav__link">
+    send_status(code: int)→ Type[flask_express.response.Response]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typetype-str" class="md-nav__link">
+    type(type: str)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -338,6 +484,162 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-of-response-class" class="md-nav__link">
+    API of Response Class
+  </a>
+  
+    <nav class="md-nav" aria-label="API of Response Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-the-available-methods-are-listed-below" class="md-nav__link">
+    All the available methods are listed below:
+  </a>
+  
+    <nav class="md-nav" aria-label="All the available methods are listed below:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attachmentfile_name-str" class="md-nav__link">
+    attachment(file_name: str)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear_cookiekey-str-path-str-domain-optionalstr-none-secure-bool-false-httponly-bool-false-samesite-optionalstr-none-typeflask_expressresponseresponse" class="md-nav__link">
+    clear_cookie(key: str, path: str = '/', domain: Optional[str] = None, secure: bool = False, httponly: bool = False, samesite: Optional[str] = None)→ Type[flask_express.response.Response]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endcode-optionalint-none" class="md-nav__link">
+    end(code: Optional[int] = None)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flashmessage-str-category-str-info-typeflask_expressresponseresponse" class="md-nav__link">
+    flash(message: str, category: str = 'info')→ Type[flask_express.response.Response]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getkey-str-str" class="md-nav__link">
+    get(key: str)→ str
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonwargs-any-kwargs-any-typeflask_expressresponseresponse" class="md-nav__link">
+    json(*wargs: Any, kwargs: Any)→ Type[flask_express.response.Response]**
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make_responseresponse-optionalunioniterablebytes-bytes-iterablestr-str-none-status-optionalunionint-str-httpstatus-none-headers-optionalunionmappingstr-unionstr-int-iterableunionstr-int-iterabletuplestr-unionstr-int-none-mimetype-optionalstr-none-content_type-optionalstr-none-direct_passthrough-bool-false-typeresponsebase" class="md-nav__link">
+    make_response(response: Optional[Union[Iterable[bytes], bytes, Iterable[str], str]] = None, status: Optional[Union[int, str, HTTPStatus]] = None, headers: Optional[Union[Mapping[str, Union[str, int, Iterable[Union[str, int]]]], Iterable[Tuple[str, Union[str, int]]]]] = None, mimetype: Optional[str] = None, content_type: Optional[str] = None, direct_passthrough: bool = False)→ Type[ResponseBase]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirectroute-str" class="md-nav__link">
+    redirect(route: str)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendertemplate_or_raw-str-wargs-any-context-any-typestr" class="md-nav__link">
+    render(template_or_raw: str, *wargs: Any, context: Any)→ Type[str]**
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendcontent-unionstr-dict-listany-typeflask_expressresponseresponse" class="md-nav__link">
+    send(content: Union[str, dict, List[Any]])→ Type[flask_express.response.Response]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send_filepath_or_file-unionpathlike-str-binaryio-mimetype-optionalstr-none-as_attachment-bool-false-download_name-optionalstr-none-attachment_filename-optionalstr-none-conditional-bool-true-etag-unionbool-str-true-add_etags-optionalbool-none-last_modified-optionaluniondatetime-int-float-none-max_age-optionalunionint-callableoptionalstr-optionalint-none-cache_timeout-optionalint-none-typeresponse" class="md-nav__link">
+    send_file(path_or_file: Union[PathLike, str, BinaryIO], mimetype: Optional[str] = None, as_attachment: bool = False, download_name: Optional[str] = None, attachment_filename: Optional[str] = None, conditional: bool = True, etag: Union[bool, str] = True, add_etags: Optional[bool] = None, last_modified: Optional[Union[datetime, int, float]] = None, max_age: Optional[Union[int, Callable[[Optional[str]], Optional[int]]]] = None, cache_timeout: Optional[int] = None)→ Type[Response]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwargs" class="md-nav__link">
+    set(*wargs)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_cookiekey-str-value-str-max_age-optionaluniontimedelta-int-none-expires-optionalunionstr-datetimedatetime-int-float-none-path-optionalstr-domain-optionalstr-none-secure-bool-false-httponly-bool-false-samesite-optionalstr-none-typeresponse" class="md-nav__link">
+    set_cookie(key: str, value: str = '', max_age: Optional[Union[timedelta, int]] = None, expires: Optional[Union[str, datetime.datetime, int, float]] = None, path: Optional[str] = '/', domain: Optional[str] = None, secure: bool = False, httponly: bool = False, samesite: Optional[str] = None)→ Type[Response]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send_statuscode-int-typeflask_expressresponseresponse" class="md-nav__link">
+    send_status(code: int)→ Type[flask_express.response.Response]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typetype-str" class="md-nav__link">
+    type(type: str)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -348,9 +650,253 @@
                   </a>
                 
                 
-                  <h1>Response Class</h1>
-                
-                
+                <h1 id="response-class">Response Class<a class="headerlink" href="#response-class" title="Permanent link">&para;</a></h1>
+<p>Flask-Express has it's own <code>munch</code> based <code>Response</code> class to get all the response based params.</p>
+<h2 id="api-of-response-class">API of Response Class<a class="headerlink" href="#api-of-response-class" title="Permanent link">&para;</a></h2>
+<p><strong>class <code>flask_express.response.Response(*wargs, **kwargs)</code></strong></p>
+<p><strong>Bases</strong>: <code>flask.wrappers.Response</code>    </p>
+<p>The default response class for flask-express app.</p>
+<h3 id="all-the-available-methods-are-listed-below">All the available methods are listed below:<a class="headerlink" href="#all-the-available-methods-are-listed-below" title="Permanent link">&para;</a></h3>
+<h4 id="attachmentfile_name-str"><strong>attachment(file_name: str)</strong><a class="headerlink" href="#attachmentfile_name-str" title="Permanent link">&para;</a></h4>
+<p>send the attachments by using this method. The default attachment folder name is attachments. You can always change it by changing the config parameter. the config parameter is ATTACHMENTS_FOLDER.</p>
+<p><strong>Parameters</strong> <code>file_name</code> – the file you want to server as attachment.</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/attachments&#39;</span><span class="p">)</span> 
+<span class="k">def</span> <span class="nf">attach</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filename</span> 
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">attachment</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="clear_cookiekey-str-path-str-domain-optionalstr-none-secure-bool-false-httponly-bool-false-samesite-optionalstr-none-typeflask_expressresponseresponse"><strong>clear_cookie(key: str, path: str = '/', domain: Optional[str] = None, secure: bool = False, httponly: bool = False, samesite: Optional[str] = None)→ Type[flask_express.response.Response]</strong><a class="headerlink" href="#clear_cookiekey-str-path-str-domain-optionalstr-none-secure-bool-false-httponly-bool-false-samesite-optionalstr-none-typeflask_expressresponseresponse" title="Permanent link">&para;</a></h4>
+<p>Clear a cookie. Fails silently if key doesn’t exist.</p>
+<p><strong>Parameters</strong>   </p>
+<ul>
+<li>
+<p><strong>key</strong> – the key (name) of the cookie to be deleted.</p>
+</li>
+<li>
+<p><strong>path</strong> – if the cookie that should be deleted was limited to a path, the path has to be defined here.</p>
+</li>
+<li>
+<p><strong>domain</strong> – if the cookie that should be deleted was limited to a domain, that domain has to be defined here.</p>
+</li>
+<li>
+<p><strong>secure</strong> – If True, the cookie will only be available via HTTPS.</p>
+</li>
+<li>
+<p><strong>httponly</strong> – Disallow JavaScript access to the cookie.</p>
+</li>
+<li>
+<p><strong>samesite</strong> – Limit the scope of the cookie to only be attached to requests that are “same-site”.</p>
+</li>
+</ul>
+<h4 id="endcode-optionalint-none"><strong>end(code: Optional[int] = None)</strong><a class="headerlink" href="#endcode-optionalint-none" title="Permanent link">&para;</a></h4>
+<p>end the current resonse process. :param code: provide the web error code, if you want to close this response with a http error. </p>
+<p><strong>for example:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/end&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">ender</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="c1">#or</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">end</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span> <span class="c1"># to raise a 404 error.</span>
+</code></pre></div>
+<h4 id="flashmessage-str-category-str-info-typeflask_expressresponseresponse"><strong>flash(message: str, category: str = 'info')→ Type[flask_express.response.Response]</strong><a class="headerlink" href="#flashmessage-str-category-str-info-typeflask_expressresponseresponse" title="Permanent link">&para;</a></h4>
+<p>to flash a message.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<p><strong>message</strong> – the message to flash.</p>
+</li>
+<li>
+<p><strong>category</strong> – the category of flash message. Default is “info”.</p>
+</li>
+</ul>
+<p><strong>for example:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/flash&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">flasher</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&quot;this is the flash message&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+</code></pre></div>
+<h4 id="getkey-str-str"><strong>get(key: str)→ str</strong><a class="headerlink" href="#getkey-str-str" title="Permanent link">&para;</a></h4>
+<p>get the response headers.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>key</strong> – the key to get the headers from response.</li>
+</ul>
+<p><strong>For example:</strong>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="err">“</span><span class="o">/</span><span class="n">get</span><span class="err">”</span><span class="p">)</span> 
+<span class="k">def</span> <span class="nf">getter</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="err">“</span><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="err">”</span><span class="p">))</span> 
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+</code></pre></div></p>
+<h4 id="jsonwargs-any-kwargs-any-typeflask_expressresponseresponse"><strong>json(*wargs: Any, </strong>kwargs: Any)→ Type[flask_express.response.Response]**<a class="headerlink" href="#jsonwargs-any-kwargs-any-typeflask_expressresponseresponse" title="Permanent link">&para;</a></h4>
+<p>return the json seriliazed data.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<p><strong>wargs</strong> – dict or list type value.</p>
+</li>
+<li>
+<p><strong>kwargs</strong> – kwargs type value. it will create a dictionary with the provided values of kwargs. </p>
+</li>
+</ul>
+<p><strong>for example:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/json&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">jsoner</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;aniket sarkar&quot;</span><span class="p">)</span>
+    <span class="c1">#or</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;aniket sarkar&#39;</span><span class="p">})</span>
+    <span class="c1">#or</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</code></pre></div>
+<h4 id="make_responseresponse-optionalunioniterablebytes-bytes-iterablestr-str-none-status-optionalunionint-str-httpstatus-none-headers-optionalunionmappingstr-unionstr-int-iterableunionstr-int-iterabletuplestr-unionstr-int-none-mimetype-optionalstr-none-content_type-optionalstr-none-direct_passthrough-bool-false-typeresponsebase"><strong>make_response(response: Optional[Union[Iterable[bytes], bytes, Iterable[str], str]] = None, status: Optional[Union[int, str, HTTPStatus]] = None, headers: Optional[Union[Mapping[str, Union[str, int, Iterable[Union[str, int]]]], Iterable[Tuple[str, Union[str, int]]]]] = None, mimetype: Optional[str] = None, content_type: Optional[str] = None, direct_passthrough: bool = False)→ Type[ResponseBase]</strong><a class="headerlink" href="#make_responseresponse-optionalunioniterablebytes-bytes-iterablestr-str-none-status-optionalunionint-str-httpstatus-none-headers-optionalunionmappingstr-unionstr-int-iterableunionstr-int-iterabletuplestr-unionstr-int-none-mimetype-optionalstr-none-content_type-optionalstr-none-direct_passthrough-bool-false-typeresponsebase" title="Permanent link">&para;</a></h4>
+<p>the base function for this class to create the final response.</p>
+<h4 id="redirectroute-str"><strong>redirect(route: str)</strong><a class="headerlink" href="#redirectroute-str" title="Permanent link">&para;</a></h4>
+<p>redirect to specified route.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>route</strong> – str based value, the default path where you want to redirect.</li>
+</ul>
+<p><strong>for example:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">)</span> 
+<span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="c1">#if login success </span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/dashboard&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="rendertemplate_or_raw-str-wargs-any-context-any-typestr"><strong>render(template_or_raw: str, *wargs: Any, </strong>context: Any)→ Type[str]**<a class="headerlink" href="#rendertemplate_or_raw-str-wargs-any-context-any-typestr" title="Permanent link">&para;</a></h4>
+<p>Renders a html and sends the rendered HTML string to the client.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<p><strong>template_or_raw</strong> – provide the template name or the html string to be rendered.</p>
+</li>
+<li>
+<p><strong>wargs</strong> – The dictionary type context for the jinja2 template.</p>
+</li>
+<li>
+<p><strong>context</strong> – the kwargs type context for the jinja2 template.</p>
+</li>
+</ul>
+<p><strong>For example:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/render&#39;</span><span class="p">)</span> 
+<span class="k">def</span> <span class="nf">renderer</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="n">context</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Aniket Sarkar&quot;</span><span class="p">,</span> <span class="n">planet</span><span class="o">=</span><span class="s2">&quot;Pluto&quot;</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">&quot;index.html&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span> 
+    <span class="c1">#or </span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">&quot;index.html&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Aniket Sarkar&quot;</span><span class="p">,</span> <span class="n">planet</span><span class="o">=</span><span class="s2">&quot;Pluto&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="sendcontent-unionstr-dict-listany-typeflask_expressresponseresponse"><strong>send(content: Union[str, dict, List[Any]])→ Type[flask_express.response.Response]</strong><a class="headerlink" href="#sendcontent-unionstr-dict-listany-typeflask_expressresponseresponse" title="Permanent link">&para;</a></h4>
+<p>Sends the HTTP response.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>content</strong> – the content to send.</li>
+</ul>
+<p><strong>for example:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/send&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">sender</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
+    <span class="c1">#or</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;&lt;h1&gt;hello world&lt;/h1&gt;&quot;</span><span class="p">)</span>
+    <span class="c1">#or</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">set_status</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;not found&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="send_filepath_or_file-unionpathlike-str-binaryio-mimetype-optionalstr-none-as_attachment-bool-false-download_name-optionalstr-none-attachment_filename-optionalstr-none-conditional-bool-true-etag-unionbool-str-true-add_etags-optionalbool-none-last_modified-optionaluniondatetime-int-float-none-max_age-optionalunionint-callableoptionalstr-optionalint-none-cache_timeout-optionalint-none-typeresponse"><strong>send_file(path_or_file: Union[PathLike, str, BinaryIO], mimetype: Optional[str] = None, as_attachment: bool = False, download_name: Optional[str] = None, attachment_filename: Optional[str] = None, conditional: bool = True, etag: Union[bool, str] = True, add_etags: Optional[bool] = None, last_modified: Optional[Union[datetime, int, float]] = None, max_age: Optional[Union[int, Callable[[Optional[str]], Optional[int]]]] = None, cache_timeout: Optional[int] = None)→ Type[Response]</strong><a class="headerlink" href="#send_filepath_or_file-unionpathlike-str-binaryio-mimetype-optionalstr-none-as_attachment-bool-false-download_name-optionalstr-none-attachment_filename-optionalstr-none-conditional-bool-true-etag-unionbool-str-true-add_etags-optionalbool-none-last_modified-optionaluniondatetime-int-float-none-max_age-optionalunionint-callableoptionalstr-optionalint-none-cache_timeout-optionalint-none-typeresponse" title="Permanent link">&para;</a></h4>
+<p>Send the contents of a file to the client. Its internally using the send_file method from werkzeug.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<p><strong>path_or_file</strong> – The path to the file to send, relative to the current working directory if a relative path is given. Alternatively, a file-like object opened in binary mode. Make sure the file pointer is seeked to the start of the data. </p>
+</li>
+<li>
+<p><strong>mimetype</strong>: The MIME type to send for the file. If not provided, it will try to detect it from the file name.</p>
+</li>
+<li>
+<p><strong>as_attachment</strong> – Indicate to a browser that it should offer to save the file instead of displaying it.</p>
+</li>
+<li>
+<p><strong>download_name</strong> – The default name browsers will use when saving the file. Defaults to the passed file name.</p>
+</li>
+<li>
+<p><strong>conditional</strong> – Enable conditional and range responses based on request headers. Requires passing a file path and environ.</p>
+</li>
+<li>
+<p><strong>etag</strong> – Calculate an ETag for the file, which requires passing a file path. Can also be a string to use instead.</p>
+</li>
+<li>
+<p><strong>last_modified</strong> – The last modified time to send for the file, in seconds. If not provided, it will try to detect it from the file path.</p>
+</li>
+<li>
+<p><strong>max_age</strong> – How long the client should cache the file, in seconds. If set, Cache-Control will be public, otherwise it will be no-cache to prefer conditional caching.</p>
+</li>
+</ul>
+<h4 id="setwargs"><strong>set(*wargs)</strong><a class="headerlink" href="#setwargs" title="Permanent link">&para;</a></h4>
+<p>set the default header.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>wargs</strong> – dictionary or Headers type data.</li>
+</ul>
+<p><strong>For example:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/header-seter&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">header_setter</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="n">res</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+    <span class="c1">#or</span>
+    <span class="n">res</span><span class="o">.</span><span class="n">set</span><span class="p">({</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span><span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+</code></pre></div>
+<h4 id="set_cookiekey-str-value-str-max_age-optionaluniontimedelta-int-none-expires-optionalunionstr-datetimedatetime-int-float-none-path-optionalstr-domain-optionalstr-none-secure-bool-false-httponly-bool-false-samesite-optionalstr-none-typeresponse"><strong>set_cookie(key: str, value: str = '', max_age: Optional[Union[timedelta, int]] = None, expires: Optional[Union[str, datetime.datetime, int, float]] = None, path: Optional[str] = '/', domain: Optional[str] = None, secure: bool = False, httponly: bool = False, samesite: Optional[str] = None)→ Type[Response]</strong><a class="headerlink" href="#set_cookiekey-str-value-str-max_age-optionaluniontimedelta-int-none-expires-optionalunionstr-datetimedatetime-int-float-none-path-optionalstr-domain-optionalstr-none-secure-bool-false-httponly-bool-false-samesite-optionalstr-none-typeresponse" title="Permanent link">&para;</a></h4>
+<p>Sets a cookie.</p>
+<p>A warning is raised if the size of the cookie header exceeds max_cookie_size, but the header will still be set.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<p><strong>key</strong> – the key (name) of the cookie to be set.</p>
+</li>
+<li>
+<p><strong>value</strong> – the value of the cookie.</p>
+</li>
+<li>
+<p><strong>max_age</strong> – should be a number of seconds, or None (default) if the cookie should last only as long as the client’s browser session.</p>
+</li>
+<li>
+<p><strong>expires</strong> – should be a datetime object or UNIX timestamp.</p>
+</li>
+<li>
+<p><strong>path</strong> – limits the cookie to a given path, per default it will span the whole domain.</p>
+</li>
+<li>
+<p><strong>domain</strong> – if you want to set a cross-domain cookie. For example, domain=".example.com" will set a cookie that is readable by the domain www.example.com, foo.example.com etc. Otherwise, a cookie will only be readable by the domain that set it.</p>
+</li>
+<li>
+<p><strong>secure</strong> – If True, the cookie will only be available via HTTPS.</p>
+</li>
+<li>
+<p><strong>httponly</strong> – Disallow JavaScript access to the cookie.</p>
+</li>
+<li>
+<p><strong>samesite</strong> – Limit the scope of the cookie to only be attached to requests that are “same-site”.</p>
+</li>
+</ul>
+<h4 id="send_statuscode-int-typeflask_expressresponseresponse"><strong>send_status(code: int)→ Type[flask_express.response.Response]</strong><a class="headerlink" href="#send_statuscode-int-typeflask_expressresponseresponse" title="Permanent link">&para;</a></h4>
+<p>set the web response status code. </p>
+<p><strong>Parameters</strong> </p>
+<ul>
+<li><strong>code</strong> - The web response status.</li>
+</ul>
+<p><strong>For example:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/send-status&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">send_statuser</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send_status</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;your requested page is not found.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="typetype-str"><strong>type(type: str)</strong><a class="headerlink" href="#typetype-str" title="Permanent link">&para;</a></h4>
+<p>Sets the Content-Type HTTP header to the MIME type as determined by the specified type.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>type</strong> – The desired mine type to set.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/set-mime&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">mimer</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="n">res</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+    <span class="c1">#or</span>
+    <span class="n">res</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;.html&quot;</span><span class="p">)</span>
+    <span class="c1">#or</span>
+    <span class="n">res</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;json&quot;</span><span class="p">)</span>
+</code></pre></div>
                 
               
               
@@ -386,13 +932,13 @@
       
       
         
-        <a href="../munch/" class="md-footer__link md-footer__link--next" aria-label="Next: Munch Class" rel="next">
+        <a href="../tutorial/" class="md-footer__link md-footer__link--next" aria-label="Next: Tutorial" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Munch Class
+              Tutorial
             </div>
           </div>
           <div class="md-footer__button md-icon">
