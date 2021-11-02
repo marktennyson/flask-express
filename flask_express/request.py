@@ -6,6 +6,7 @@ from .munch import Munch
 
 if t.TYPE_CHECKING:
     from munch import Munch
+    from flask.sessions import SessionMixin
 
 class Request(RequestBase):
     """
@@ -43,8 +44,9 @@ class Request(RequestBase):
         return Munch(self.headers)
 
     @property
-    def session(self):
+    def session(self) -> t.Type["SessionMixin"]:
         """
-        it provides you the default session object of flask globals.
+        it provides you the default session object of flask 
+        globals as a property of `request.Request` class.
         """
         return session

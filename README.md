@@ -5,7 +5,7 @@
 [![Downloads](https://pepy.tech/badge/flask-express)](https://pepy.tech/project/flask-express) [![Downloads](https://pepy.tech/badge/flask-express/month)](https://pepy.tech/project/flask-express/month) [![Downloads](https://pepy.tech/badge/flask-express/week)](https://pepy.tech/project/flask-express/week)
 <br>
 
-#### contributor wanted : feel free to contact me at aniketsarkar@yahoo.com    
+#### contributor needed.  
 
 provide the interactive service like expressJs for the flask app.
 
@@ -142,14 +142,14 @@ def get_form_data(req, res):
 
 #### Response class
 
-##### function - set_status
+##### function - send_status
 This is used to set the response header status.
 
 for example:
 ```python
 @app.route("/set-status")
 def set_statuser(req, res):
-    return res.set_status(404).send("your requested page is not found.")
+    return res.send_status(404).send("your requested page is not found.")
 ```
 
 ##### function - flash
@@ -173,7 +173,7 @@ def sender(req, res):
     #or
     return res.send("<h1>hello world</h1>")
     #or
-    return res.set_status(404).send("not found")
+    return res.send_status(404).send("not found")
 ```
 
 ##### function - json
@@ -292,6 +292,11 @@ make a http response. It's same as `Flask.wrappers.Request`
 
 ### Development
 
+#### Beautiful Contributors
+<a href="https://github.com/flaskAio/navycut/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=marktennyson/flask-express" />
+</a>
+
 #### Contribution procedure.
 1. Create a new issue on github.
 2. Fork and clone this repository.
@@ -307,3 +312,14 @@ make a http response. It's same as `Flask.wrappers.Request`
 5. The above command will install the `flask-express` module on your virtual environment.
 6. Now create a separate project inside the example folder and start testing for your code changes.
 7. If you face any difficulties to perform the above steps, then plese contact me at: `aniketsarkar@yahoo.com`.
+
+### Future Roadmap
+1. Middleware support.
+2. Implementation of all the apis of ExpressJs.
+3. Auto Swagger documentation using `flask-restplus` and `flask-pydantic` module.
+
+### License
+
+MIT License
+
+Copyright (c) 2021 Aniket Sarkar(aniketsarkar@yahoo.com)
