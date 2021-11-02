@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 
-VERSION_INFO = (0, 1, 2)
+VERSION_INFO = (0, 1, 3)
 AUTHOR = "Aniket Sarkar"
 
 with open("README.md", "r") as f:
@@ -12,7 +12,7 @@ setup(
     name="Flask-Express",
     version=".".join([str(v) for v in list(VERSION_INFO)]),
     url="https://github.com/marktennyson/flask-express",
-    license="GNU General Public License v3 or later (GPLv3+)",
+    license="MIT",
     author=AUTHOR,
     author_email="aniketsarkar@yahoo.com",
     description="interactive app like expressJs for flask.",
@@ -36,7 +36,7 @@ setup(
         "Environment :: Web Environment",
         "Framework :: Flask",
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",

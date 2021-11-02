@@ -11,7 +11,7 @@
 - Fixed `flask-admin` related issue.
 - Added __MKDocs__ based documentation.
 
-## 0.1.3 [Upcoming]
+## 0.1.3
 - Fixed attachment directory related issue
 - Now the user have the power to add custom attachment folder.
 - showing proper error message when attached file is absent at the attachment directory.
@@ -23,3 +23,4 @@
 - Added more documentation.
 - docstring typo fixed at `request.Request` class.
 - Added more test cases.
+- Changed the License from **GPL** to **MIT**.
