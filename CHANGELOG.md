@@ -24,3 +24,7 @@
 - docstring typo fixed at `request.Request` class.
 - Added more test cases.
 - Changed the License from **GPL** to **MIT**.
+
+## 0.1.4 [Upcoming]
+- Added CODE_OF_CONDUCT.md file.
+- Added CONTRIBUTING.md file.
