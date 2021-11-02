@@ -320,6 +320,6 @@ make a http response. It's same as `Flask.wrappers.Request`
 
 ### License
 
-GNU General Public License v3 or later (GPLv3+)
+MIT License
 
 Copyright (c) 2021 Aniket Sarkar(aniketsarkar@yahoo.com)
