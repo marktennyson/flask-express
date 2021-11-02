@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/marktennyson/flask-express/main/logos/flask-express-logo.png">
 
-[![MIT licensed](https://img.shields.io/github/license/marktennyson/Flask-Tortoise)](https://raw.githubusercontent.com/marktennyson/Flask-Tortoise/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/marktennyson/Flask-Tortoise.svg)](https://github.com/marktennyson/Flask-Tortoise/stargazers) [![GitHub forks](https://img.shields.io/github/forks/marktennyson/Flask-Tortoise.svg)](https://github.com/marktennyson/Flask-Tortoise/network) [![GitHub issues](https://img.shields.io/github/issues-raw/marktennyson/Flask-Tortoise)](https://github.com/marktennyson/Flask-Tortoise/issues) [![Downloads](https://pepy.tech/badge/Flask-Tortoise)](https://pepy.tech/project/Flask-Tortoise)
+[![MIT licensed](https://img.shields.io/github/license/marktennyson/Flask-Express)](https://raw.githubusercontent.com/marktennyson/Flask-Express/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/marktennyson/Flask-Express.svg)](https://github.com/marktennyson/Flask-Express/stargazers) [![GitHub forks](https://img.shields.io/github/forks/marktennyson/Flask-Express.svg)](https://github.com/marktennyson/Flask-Express/network) [![GitHub issues](https://img.shields.io/github/issues-raw/marktennyson/Flask-Express)](https://github.com/marktennyson/Flask-Express/issues) [![Downloads](https://pepy.tech/badge/Flask-Express)](https://pepy.tech/project/Flask-Express)
 
 ## Introduction
 
