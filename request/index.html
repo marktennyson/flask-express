@@ -321,6 +321,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#set_sessionkeyany-valueany-typeflasksessionsessionmixin" class="md-nav__link">
+    set_session(key:Any, value:Any) -&gt; Type[flask.session.SessionMixin]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_sessionskey_valuetupleany-any-typeflasksessionsessionmixin" class="md-nav__link">
+    set_sessions(key_value:Tuple[Any, Any]) -&gt; Type[flask.session.SessionMixin]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_sessionkeyany-any" class="md-nav__link">
+    get_session(key:Any) -&gt; Any
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -462,6 +483,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#set_sessionkeyany-valueany-typeflasksessionsessionmixin" class="md-nav__link">
+    set_session(key:Any, value:Any) -&gt; Type[flask.session.SessionMixin]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_sessionskey_valuetupleany-any-typeflasksessionsessionmixin" class="md-nav__link">
+    set_sessions(key_value:Tuple[Any, Any]) -&gt; Type[flask.session.SessionMixin]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_sessionkeyany-any" class="md-nav__link">
+    get_session(key:Any) -&gt; Any
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -500,6 +542,32 @@
 <p>it provides you the args based data.</p>
 <h4 id="property-session-typeflasksessionsessionmixin"><strong>property</strong> <code>session</code>: <code>Type[flask.session.SessionMixin]</code><a class="headerlink" href="#property-session-typeflasksessionsessionmixin" title="Permanent link">&para;</a></h4>
 <p>it provides you the default session object of flask globals as a property of <code>request.Request</code> class.</p>
+<p><strong>Added in version 0.1.4</strong></p>
+<h4 id="set_sessionkeyany-valueany-typeflasksessionsessionmixin"><strong>set_session(key:Any, value:Any) -&gt; Type[flask.session.SessionMixin]</strong><a class="headerlink" href="#set_sessionkeyany-valueany-typeflasksessionsessionmixin" title="Permanent link">&para;</a></h4>
+<p>Set the session object by providing the kay value name.</p>
+<p><strong>Parameters</strong> <code>key</code> – the key name.  <br />
+<strong>Parameters</strong> <code>value</code> – the value for the provided key.</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/set-session&#39;</span><span class="p">)</span> 
+<span class="k">def</span> <span class="nf">ss</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">set_session</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;aniket&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;OK)</span>
+</code></pre></div>
+<h4 id="set_sessionskey_valuetupleany-any-typeflasksessionsessionmixin"><strong>set_sessions(key_value:Tuple[Any, Any]) -&gt; Type[flask.session.SessionMixin]</strong><a class="headerlink" href="#set_sessionskey_valuetupleany-any-typeflasksessionsessionmixin" title="Permanent link">&para;</a></h4>
+<p>set multiple sessions at a same time by sending the key, value pair in a tuple.</p>
+<p><strong>Parameters:</strong> <code>key_value</code> - Tuple of the key-value pair</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/set-sessions&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">sss</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">set_sessions</span><span class="p">((</span><span class="s1">&#39;name_1&#39;</span><span class="p">,</span> <span class="s1">&#39;aniket&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;name_2&#39;</span><span class="p">,</span> <span class="s1">&#39;sarkar&#39;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="get_sessionkeyany-any"><strong>get_session(key:Any) -&gt; Any</strong><a class="headerlink" href="#get_sessionkeyany-any" title="Permanent link">&para;</a></h4>
+<p>Get the session value as per the provided key name.</p>
+<p><strong>Parameters</strong> <code>key</code> – the key name to fetch teh mapped value.    </p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/get-session&#39;</span><span class="p">)</span> 
+<span class="k">def</span> <span class="nf">gs</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;OK)</span>
+</code></pre></div>
                 
               
               
