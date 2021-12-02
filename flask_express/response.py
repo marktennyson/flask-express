@@ -333,7 +333,7 @@ class Response(ResponseBase):
         
         return self.set('Content-Type', _mimetype)
 
-    def attachment(self, file_name:str):
+    def attachment(self, file_name:str, **kwargs:t.Any):
         """
         send the attachments by using this method.
         The default attachment folder name is `attachments`.
@@ -349,11 +349,25 @@ class Response(ResponseBase):
             def attach(req, res):
                 filename = req.query.filename
                 return res.attachment(file_name)
+            
+        ----- version-0.1.3 changes ------
+        Now you can set the downloadable name of the attachment.
+        :for example::
+
+            from datetime import datetime
+
+            @app.route('/attachments')
+            def attach(req, res):
+                filename = req.query.filename
+                now = datetime.now()
+                dl_filename = f'{filename.rsplit(".", 1)[0]}_{now.strftime("%Y%m%d-%I%M%S")}.{filename.rsplit(".", 1)[1]}'
+                return res.attachment(file_name, download_name=dl_filename)
         """
+        kwargs.setdefault('as_attachment', True)
         return Utils.send_from_directory(
             current_app.config['ATTACHMENTS_FOLDER'], 
             file_name, 
-            as_attachment=True
+            **kwargs
             ), self.status_code
 
     def send_file(self,

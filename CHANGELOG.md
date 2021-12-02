@@ -24,3 +24,6 @@
 - docstring typo fixed at `request.Request` class.
 - Added more test cases.
 - Changed the License from **GPL** to **MIT**.
+
+## 0.1.4 (Upcoming)
+- Added `download_name` features to the `Response.attachment` method to set the downloadable name of the attachment file.
