@@ -25,7 +25,7 @@ def attach(req, res):
     return res.attachment(file_name)
 ```
 
-**from version 1.0.4 `flask-express` started supporting to set the downloadable name for the attachments.**
+**from version 0.1.4 `flask-express` started supporting to set the downloadable name for the attachments.**
 
 ```python
 from datetime import datetime
