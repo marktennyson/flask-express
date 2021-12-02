@@ -30,7 +30,7 @@ def mrp(req:Request, res:Response):
     # return res.json(id=1)
     # print (app.config)
     # print (app.config['ATTACHMENTS_FOLDER'])
-    return res.attachment("hello.txt")
+    return res.attachment("hello.txt", download_name="aniket.txt")
 
 @app.route("/check-session")
 def check_session(req:Request, res:Response):
@@ -60,12 +60,12 @@ def redirector(req:Request, res:Response):
 
 @app.get("/set-session")
 def set_session(req:Request, res:Response):
-    req.session['username'] = 'aniketsarkar'
+    req.set_session('username', 'marktennyson')
     return res.send('OK')
 
 @app.get("/get-session")
 def get_session(req:Request, res:Response):
-    username = req.session.get('username')
+    username = req.get_session('username')
     return res.send(dict(username=username))
 
 @app.get("/check-flash")

@@ -17,11 +17,11 @@ import os as os
 if t.TYPE_CHECKING:
     from _typeshed.wsgi import WSGIEnvironment
 
-def async_to_sync(func):
+def async_to_sync(func) -> t.Any:
     return asgiref_async_to_sync(func)
 
 
-def get_main_ctx_view(func:t.Callable):
+def get_main_ctx_view(func:t.Callable) -> t.Any:
     """
     adding the default request, response object with view function
     """
