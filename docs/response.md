@@ -25,6 +25,19 @@ def attach(req, res):
     return res.attachment(file_name)
 ```
 
+**from version 1.0.4 `flask-express` started supporting to set the downloadable name for the attachments.**
+
+```python
+from datetime import datetime
+
+@app.route('/attachments')
+def attach(req, res):
+    filename = req.query.filename
+    now = datetime.now()
+    dl_filename = f'{filename.rsplit(".", 1)[0]}_{now.strftime("%Y%m%d-%I%M%S")}.{filename.rsplit(".", 1)[1]}'
+    return res.attachment(file_name, download_name=dl_filename)
+```
+
 #### **clear_cookie(key: str, path: str = '/', domain: Optional[str] = None, secure: bool = False, httponly: bool = False, samesite: Optional[str] = None)→ Type[flask_express.response.Response]**
 
 Clear a cookie. Fails silently if key doesn’t exist.

@@ -29,3 +29,15 @@ def test_queryargs_request(app:"FlaskExpress", client:"FlaskClient"):
     rv_test_json = client.get('/test-query-request?name=Aniket Sarkar&plannet=Pluto')
     assert rv_test_json.status_code == 200
     assert rv_test_json.data == b'{"status": 1}'
+
+def test_set_get_session_func(app:"FlaskExpress", client:"FlaskClient"):
+    @app.get("/test-set-get-session-request")
+    def set_get_session_request(req:"Request", res:"Response"):
+        req.set_session("username", "expo_9071")
+        assert req.session.get("username") == "expo_9071"
+        assert req.get_session("username") == "expo_9071"
+        return res.json(username=req.get_session("username"))
+
+    rv_test_json = client.get('/test-set-get-session-request')
+    assert rv_test_json.status_code == 200
+    assert rv_test_json.data == b'{"username": "expo_9071"}'

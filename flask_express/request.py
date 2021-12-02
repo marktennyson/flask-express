@@ -50,3 +50,54 @@ class Request(RequestBase):
         globals as a property of `request.Request` class.
         """
         return session
+
+    def set_session(self, key:t.Any, value:t.Any) -> "SessionMixin":
+        """
+        set the session object by providing the kay value name.
+
+        added in version 1.0.4
+
+        for example::
+
+            @app.route('/set-session') 
+            def ss(req, res):
+                req.set_session('name', 'aniket')
+                return res.send("OK)
+        """
+        session[key] = value
+
+        return session
+
+    def set_sessions(self, key_value:t.Tuple[t.Any, t.Any]) -> "SessionMixin":
+        """
+        set multiple sessions at a same time 
+        by sending the key, value pair in a tuple.
+
+        added in version 1.0.4
+
+        for example::
+
+            @app.get("/set-sessions")
+            def sss(req, res):
+                req.set_sessions(('name_1', 'aniket'), ('name_2', 'sarkar'))
+                return res.send('OK')
+        """
+        for item in key_value:
+            self.set_session(item)
+
+        return session
+
+    def get_session(self, key:t.Any) -> t.Optional[t.Any]:
+        """
+        get the session value as per the provided key name.
+
+        added in version 1.0.4
+
+        for example::
+
+            @app.route('/get-session') 
+            def gs(req, res):
+                req.get_session('name')
+                return res.send("OK)
+        """
+        return session.get(key, None)

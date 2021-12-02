@@ -25,5 +25,8 @@
 - Added more test cases.
 - Changed the License from **GPL** to **MIT**.
 
-## 0.1.4 (Upcoming)
+## 0.1.4
 - Added `download_name` features to the `Response.attachment` method to set the downloadable name of the attachment file.
+- Added `set_session` and `get_session`, two methods to set and get data from the session object.
+- Added `set_sessions` method to add multiple records at a single time to the session object.
+- Version update of some dependencies.
