@@ -55,7 +55,7 @@ class Request(RequestBase):
         """
         set the session object by providing the kay value name.
 
-        added in version 1.0.4
+        added in version 0.1.4
 
         for example::
 
@@ -73,7 +73,7 @@ class Request(RequestBase):
         set multiple sessions at a same time 
         by sending the key, value pair in a tuple.
 
-        added in version 1.0.4
+        added in version 0.1.4
 
         for example::
 
@@ -91,7 +91,7 @@ class Request(RequestBase):
         """
         get the session value as per the provided key name.
 
-        added in version 1.0.4
+        added in version 0.1.4
 
         for example::
 

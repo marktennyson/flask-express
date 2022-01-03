@@ -29,7 +29,7 @@ it provides you the args based data.
 #### **property** `session`: `Type[flask.session.SessionMixin]`      
 it provides you the default session object of flask globals as a property of `request.Request` class.
 
-**Added in version 1.0.4**
+**Added in version 0.1.4**
 
 #### **set_session(key:Any, value:Any) -> Type[flask.session.SessionMixin]**
 Set the session object by providing the kay value name.
