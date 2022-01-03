@@ -35,3 +35,4 @@
 
 ## 0.1.5 [Upcoming]
 - Some typo fixed.
+- Added `Future Rodemap` on the documentation.
