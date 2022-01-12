@@ -9,10 +9,15 @@ from flask.helpers import _prepare_send_file_kwargs
 from werkzeug.exceptions import NotFound
 from werkzeug.security import safe_join
 from werkzeug.utils import send_file
+from uvicorn.config import Config
+from uvicorn.server import Server
+from uvicorn.supervisors import ChangeReload, Multiprocess
+from uvicorn.supervisors.watchgodreload import WatchGodReload
 from asgiref.sync import async_to_sync as asgiref_async_to_sync
 
 import typing as t
 import os as os
+import uvicorn as uv
 
 if t.TYPE_CHECKING:
     from _typeshed.wsgi import WSGIEnvironment
@@ -116,3 +121,22 @@ class Utils(object):
             path, 
             **_prepare_send_file_kwargs(**kwargs)
             )
+
+
+# def run_async_simple(host, port, app, debug, **kwargs):
+#     uv.run(app, host=host, port=port, reload=debug, **kwargs)
+
+def run_async_simple(host, port, app, debug:bool=False, **kwargs) -> None:
+    if 'reload' in kwargs:
+        kwargs.pop('reload')
+    config = Config(app=app, host=host, port=port, debug=debug, **kwargs)
+    server = Server(config)
+    if debug is True:
+        sock = config.bind_socket()
+        WatchGodReload(config, target=server.run, sockets=[sock]).run()
+
+    elif config.workers > 1:
+        sock = config.bind_socket()
+        Multiprocess(config, target=server.run, sockets=[sock]).run()
+    else:
+        server.run()
