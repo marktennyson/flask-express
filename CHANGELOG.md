@@ -1,5 +1,5 @@
 ## 0.1.0
-- renamed the module name to flask-express from flaske to make it a extension of Flask.
+- renamed the module name to `flask-express` from `flaske` to make it a extension of `Flask`.
 
 ## 0.1.1
 
@@ -35,4 +35,4 @@
 
 ## 0.1.5 [Upcoming]
 - Some typo fixed.
-- Added `Future Rodemap` on the documentation.
+- Added `Future Roadmap` on the documentation.
