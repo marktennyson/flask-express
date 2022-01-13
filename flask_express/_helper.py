@@ -9,14 +9,12 @@ from flask.helpers import _prepare_send_file_kwargs
 from werkzeug.exceptions import NotFound
 from werkzeug.security import safe_join
 from werkzeug.utils import send_file
-from uvicorn.config import Config
-from uvicorn.server import Server
-from uvicorn.supervisors import ChangeReload, Multiprocess
-from uvicorn.supervisors.watchgodreload import WatchGodReload
+
 from asgiref.sync import async_to_sync as asgiref_async_to_sync
 
 import typing as t
 import os as os
+import click as c
 import uvicorn as uv
 
 if t.TYPE_CHECKING:
@@ -126,17 +124,49 @@ class Utils(object):
 # def run_async_simple(host, port, app, debug, **kwargs):
 #     uv.run(app, host=host, port=port, reload=debug, **kwargs)
 
-def run_async_simple(host, port, app, debug:bool=False, **kwargs) -> None:
-    if 'reload' in kwargs:
-        kwargs.pop('reload')
-    config = Config(app=app, host=host, port=port, debug=debug, **kwargs)
-    server = Server(config)
-    if debug is True:
-        sock = config.bind_socket()
-        WatchGodReload(config, target=server.run, sockets=[sock]).run()
+# def run_asgi_uvicorn(host, port, app, debug:bool=False, **kwargs) -> None:
+    # from uvicorn.config import Config
+    # from uvicorn.server import Server
+    # from uvicorn.supervisors import ChangeReload, Multiprocess
+    # from uvicorn.supervisors.watchgodreload import WatchGodReload
+    #     if 'reload' in kwargs:
+#         kwargs.pop('reload')
+#     config = Config(app=app, host=host, port=port, debug=debug, **kwargs)
+#     server = Server(config)
+#     if debug is True:
+#         sock = config.bind_socket()
+#         WatchGodReload(config, target=server.run, sockets=[sock]).run()
 
-    elif config.workers > 1:
-        sock = config.bind_socket()
-        Multiprocess(config, target=server.run, sockets=[sock]).run()
-    else:
-        server.run()
+#     elif config.workers > 1:
+#         sock = config.bind_socket()
+#         Multiprocess(config, target=server.run, sockets=[sock]).run()
+#     else:
+#         server.run()
+
+def _show_asgi_server_banner(env, debug, app_import_path, eager_loading):
+    """Show extra startup messages the first time the server is run,
+    ignoring the reloader.
+    """
+    if os.environ.get("WERKZEUG_RUN_MAIN") == "true":
+        return
+
+    if app_import_path is not None:
+        message = f" * Serving Flask app {app_import_path!r} on ASGI Mode"
+
+        if not eager_loading:
+            message += " (lazy loading)"
+
+        c.echo(message)
+
+    c.echo(f" * Environment: {env}")
+
+    if env == "production":
+        c.secho(
+            "   WARNING: This is a development server. Do not use it in"
+            " a production deployment.",
+            fg="red",
+        )
+        c.secho("   Use a production ASGI server(uvicorn/hypercorn) instead.", dim=True)
+
+    if debug is not None:
+        c.echo(f" * Debug mode: {'on' if debug else 'off'}")

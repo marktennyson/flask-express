@@ -5,6 +5,8 @@ Please contribute to this project.
 from os import path
 from flask import cli 
 
+from asgiref.wsgi import WsgiToAsgiInstance
+
 from werkzeug.datastructures import Headers
 
 from flask.scaffold import setupmethod
@@ -12,19 +14,30 @@ from flask.json import jsonify
 from flask.globals import request as grequest
 from flask.scaffold import _endpoint_from_view_func                                
 from flask.app import Flask
-
 from flask.helpers import get_debug_flag
 from flask.helpers import get_env
 from flask.helpers import get_load_dotenv
 
-
 from .request import Request
 from .response import Response
-from ._helper import get_main_ctx_view
+from ._helper import (
+    get_main_ctx_view, 
+    _show_asgi_server_banner
+    )
 
 import sys as sys
 import os as os
 import typing as t
+
+
+from typing import *
+import warnings
+import asyncio
+import signal
+from asgiref.wsgi import WsgiToAsgi
+from hypercorn.asyncio import serve
+from flask.logging import create_logger
+from hypercorn.config import Config as HyperConfig 
 
 if t.TYPE_CHECKING:
     from flask.typing import ResponseReturnValue
@@ -45,6 +58,7 @@ class FlaskExpress(Flask):
         instance_path: t.Optional[str] = None,
         instance_relative_config: bool = False,
         root_path: t.Optional[str] = None,
+        _async:bool= False,
     ) -> None:
         super(FlaskExpress, self).__init__(
             import_name=import_name, 
@@ -60,6 +74,10 @@ class FlaskExpress(Flask):
             )
         attachment_loc = path.join(path.abspath(path.dirname(self.import_name)), "attachments")
         self.config.setdefault("ATTACHMENTS_FOLDER", attachment_loc)
+        # self.is_async = _async
+        # if self.is_async is True:
+        #     _self:"WsgiToAsgi" = WsgiToAsgi(self)
+        #     self = _self.wsgi_application
         
 
 
@@ -311,19 +329,19 @@ class FlaskExpress(Flask):
         else:
             port = 5000
 
-        cli.show_server_banner(self.env, self.debug, self.name, False)   
-
         try:
+            options.setdefault("use_reloader", self.debug)
+
             if self.config.get('MAKE_ASGI_APP', False) is not True:
-                options.setdefault("use_reloader", self.debug)
+                cli.show_server_banner(self.env, self.debug, self.name, False) 
                 options.setdefault("use_debugger", self.debug)
                 options.setdefault("threaded", True)
                 from werkzeug.serving import run_simple
                 run_simple(t.cast(str, host), port, self, **options)
             else:
-                from ._helper import run_async_simple
-                from asgiref.wsgi import WsgiToAsgi
-                run_async_simple(t.cast(str, host), port, WsgiToAsgi(self), self.debug, **options)
+                _show_asgi_server_banner(self.env, self.debug, self.name, False)
+                options.setdefault("debug", self.debug)
+                self.async_run(host, port, **options)
         finally:
             # reset the first request information if the development server
             # reset normally.  This makes it possible to restart the server
@@ -369,3 +387,151 @@ class FlaskExpress(Flask):
             information.
         """
         return self.run(host, port, debug, load_dotenv, **options)
+
+
+
+    def async_run(
+        self,
+        host: Optional[str] = None,
+        port: Optional[int] = None,
+        debug: Optional[bool] = None,
+        use_reloader: bool = True,
+        loop: Optional[asyncio.AbstractEventLoop] = None,
+        ca_certs: Optional[str] = None,
+        certfile: Optional[str] = None,
+        keyfile: Optional[str] = None,
+        **kwargs: Any,
+    ) -> None:
+        """Run this application.
+        This is best used for development only, see Hypercorn for
+        production servers.
+        Arguments:
+            host: Hostname to listen on. By default this is loopback
+                only, use 0.0.0.0 to have the server listen externally.
+            port: Port number to listen on.
+            debug: If set enable (or disable) debug mode and debug output.
+            use_reloader: Automatically reload on code changes.
+            loop: Asyncio loop to create the server in, if None, take default one.
+                If specified it is the caller's responsibility to close and cleanup the
+                loop.
+            ca_certs: Path to the SSL CA certificate file.
+            certfile: Path to the SSL certificate file.
+            keyfile: Path to the SSL key file.
+        """
+        if kwargs:
+            warnings.warn(
+                f"Additional arguments, {','.join(kwargs.keys())}, are not supported.\n"
+                "They may be supported by Hypercorn, which is the ASGI server Flask-Express "
+                "uses by default. This method is meant for development and debugging."
+            )
+
+        if loop is None:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+
+        loop.set_debug(self.debug)
+
+        shutdown_event = asyncio.Event()
+
+        def _signal_handler(*_: Any) -> None:
+            shutdown_event.set()
+
+        try:
+            loop.add_signal_handler(signal.SIGTERM, _signal_handler)
+            loop.add_signal_handler(signal.SIGINT, _signal_handler)
+        except (AttributeError, NotImplementedError):
+            pass
+
+        task = self.run_task(
+            host,
+            port,
+            debug,
+            use_reloader,
+            ca_certs,
+            certfile,
+            keyfile,
+            shutdown_trigger=shutdown_event.wait,  # type: ignore
+        )
+        scheme = "https" if certfile is not None and keyfile is not None else "http"
+
+        try:
+            loop.run_until_complete(task)
+        finally:
+            try:
+                _cancel_all_tasks(loop)
+                loop.run_until_complete(loop.shutdown_asyncgens())
+            finally:
+                asyncio.set_event_loop(None)
+                loop.close()
+
+    def run_task(
+        self,
+        host: str = "127.0.0.1",
+        port: int = 5000,
+        debug: Optional[bool] = None,
+        use_reloader: bool = True,
+        ca_certs: Optional[str] = None,
+        certfile: Optional[str] = None,
+        keyfile: Optional[str] = None,
+        shutdown_trigger: Optional[Callable[..., Awaitable[None]]] = None,
+    ) -> Coroutine[None, None, None]:
+        """Return a task that when awaited runs this application.
+        This is best used for development only, see Hypercorn for
+        production servers.
+        Arguments:
+            host: Hostname to listen on. By default this is loopback
+                only, use 0.0.0.0 to have the server listen externally.
+            port: Port number to listen on.
+            debug: If set enable (or disable) debug mode and debug output.
+            use_reloader: Automatically reload on code changes.
+            ca_certs: Path to the SSL CA certificate file.
+            certfile: Path to the SSL certificate file.
+            keyfile: Path to the SSL key file.
+        """
+        config = HyperConfig()
+        config.access_log_format = '%(h)s - - "%(r)s" %(s)s'
+        config.accesslog = create_logger(self)
+        config.bind = [f"{host}:{port}"]
+        config.ca_certs = ca_certs
+        config.certfile = certfile
+        if debug is not None:
+            self.debug = debug
+        config.errorlog = config.accesslog
+        config.keyfile = keyfile
+        config.use_reloader = use_reloader
+
+        return serve(WsgiToAsgi(self), config, shutdown_trigger=shutdown_trigger)
+
+    def asgi_app(self) -> WsgiToAsgi:
+        return WsgiToAsgi(self)
+
+    async def __call__(self, scope, receive, send):
+
+        await WsgiToAsgiInstance(self.wsgi_app)(scope, receive, send)
+
+    # def __call__(self, environ: dict, start_response: t.Callable) -> t.Any:
+    #     """The WSGI server calls the Flask application object as the
+    #     WSGI application. This calls :meth:`wsgi_app`, which can be
+    #     wrapped to apply middleware.
+    #     """
+    #     return self.wsgi_app(environ, start_response)
+
+
+def _cancel_all_tasks(loop: asyncio.AbstractEventLoop) -> None:
+    tasks = [task for task in asyncio.all_tasks(loop) if not task.done()]
+    if not tasks:
+        return
+
+    for task in tasks:
+        task.cancel()
+    loop.run_until_complete(asyncio.gather(*tasks, return_exceptions=True))
+
+    for task in tasks:
+        if not task.cancelled() and task.exception() is not None:
+            loop.call_exception_handler(
+                {
+                    "message": "unhandled exception during shutdown",
+                    "exception": task.exception(),
+                    "task": task,
+                }
+            )
