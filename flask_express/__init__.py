@@ -58,7 +58,6 @@ class FlaskExpress(Flask):
         instance_path: t.Optional[str] = None,
         instance_relative_config: bool = False,
         root_path: t.Optional[str] = None,
-        _async:bool= False,
     ) -> None:
         super(FlaskExpress, self).__init__(
             import_name=import_name, 
@@ -331,17 +330,9 @@ class FlaskExpress(Flask):
 
         try:
             options.setdefault("use_reloader", self.debug)
-
-            if self.config.get('MAKE_ASGI_APP', False) is not True:
-                cli.show_server_banner(self.env, self.debug, self.name, False) 
-                options.setdefault("use_debugger", self.debug)
-                options.setdefault("threaded", True)
-                from werkzeug.serving import run_simple
-                run_simple(t.cast(str, host), port, self, **options)
-            else:
-                _show_asgi_server_banner(self.env, self.debug, self.name, False)
-                options.setdefault("debug", self.debug)
-                self.async_run(host, port, **options)
+            _show_asgi_server_banner(self.env, self.debug, self.name, False)
+            options.setdefault("debug", self.debug)
+            self.async_run(host, port, **options)
         finally:
             # reset the first request information if the development server
             # reset normally.  This makes it possible to restart the server
@@ -500,14 +491,11 @@ class FlaskExpress(Flask):
         config.keyfile = keyfile
         config.use_reloader = use_reloader
 
-        return serve(WsgiToAsgi(self), config, shutdown_trigger=shutdown_trigger)
-
-    def asgi_app(self) -> WsgiToAsgi:
-        return WsgiToAsgi(self)
+        return serve(WsgiToAsgi(self.wsgi_app), config, shutdown_trigger=shutdown_trigger)
 
     async def __call__(self, scope, receive, send):
 
-        await WsgiToAsgiInstance(self.wsgi_app)(scope, receive, send)
+        return await WsgiToAsgiInstance(self.wsgi_app)(scope, receive, send)
 
     # def __call__(self, environ: dict, start_response: t.Callable) -> t.Any:
     #     """The WSGI server calls the Flask application object as the

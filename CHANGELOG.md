@@ -33,6 +33,6 @@
 - Added `set_sessions` method to add multiple records at a single time to the session object.
 - Version update of some dependencies.
 
-## 0.1.5 [Upcoming]
+## 0.2.0 [Upcoming]
 - Some typo fixed.
 - Added `Future Roadmap` on the documentation.
