@@ -32,3 +32,7 @@
 - Added `set_session` and `get_session`, two methods to set and get data from the session object.
 - Added `set_sessions` method to add multiple records at a single time to the session object.
 - Version update of some dependencies.
+
+## 0.1.5
+- Some modification at the munch object.
+- Fixed much import issue at response.py.

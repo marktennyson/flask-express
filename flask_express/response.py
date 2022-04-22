@@ -10,7 +10,7 @@ from flask.templating import (render_template,
                     render_template_string
                     )
 import typing as t
-from munch import Munch
+from .munch import Munch
 from werkzeug.exceptions import *
 from flask import current_app
 from mimetypes import MimeTypes
