@@ -1,5 +1,5 @@
 click==8.0.3
-ghp-import==2.0.2
+ghp-import==2.1.0
 importlib-metadata==4.8.2
 Jinja2==3.0.2
 Markdown==3.3.6
